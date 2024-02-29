@@ -11,8 +11,8 @@ function runMethods(){
             break;
 
         case 'POST':
-            $name = $_POST['name'];
-            $tax = $_POST['tax'];
+            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
+            $tax = filter_input(INPUT_POST, "tax", FILTER_SANITIZE_NUMBER_INT);
             echo postCategories($name, $tax);
             break;
 
