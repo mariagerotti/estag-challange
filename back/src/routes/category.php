@@ -11,12 +11,9 @@ function runMethods(){
             break;
 
         case 'POST':
-            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
-            $price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_INT);
-            $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_NUMBER_INT);
-            // $price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_INT); // chave estrangeira do codigo
-
-            echo postCategories($name, $price, $amount);
+            $name = filter_input(INPUT_POST, "name", FILTER_SANITAZE_SPECIAL_CHARS);
+            $tax = filter_input(INPUT_POST, "tax", FILTER_SANITAZE_NUMBER_INT);
+            echo postCategories($name, $tax);
             break;
 
         case 'DELETE':
