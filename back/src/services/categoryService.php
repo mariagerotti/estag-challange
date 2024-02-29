@@ -10,9 +10,10 @@ function getCategories(){
     return json_encode($categories);
 };
 
-function postCategories(){
-    $acCategories = myPDO->prepare("INSERT INTO categories (CODE, NAME, TAX) VALUES (1,'fruta', 2)");
+function postCategories($id, $name, $tax){
+    $acCategories = myPDO->prepare("INSERT INTO categories (CODE, NAME, TAX) VALUES ({$id}, '{$name}', {$tax})");
     $acCategories->execute();
+    return "Criado mudo";
 };
 
 function deleteCategories(){

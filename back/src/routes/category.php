@@ -11,7 +11,10 @@ function runMethods(){
             break;
 
         case 'POST':
-            echo postCategories();
+            $name = $_POST['name'];
+            $id = $_POST['id'];
+            $tax = $_POST['tax'];
+            echo postCategories($id, $name, $tax);
             break;
 
         case 'DELETE':
