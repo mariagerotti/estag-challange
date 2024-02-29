@@ -17,7 +17,7 @@ function postCategories($name, $tax){
 };
 
 function deleteCategories(){
-    $removeCategories = myPDO->prepare('DELETE FROM CATEGORIES WHERE code=1');
+    $removeCategories = myPDO->prepare('DELETE FROM CATEGORIES WHERE CODE = {}');
     $removeCategories->execute();
 };
 ?>

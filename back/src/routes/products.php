@@ -11,6 +11,8 @@ function runMethods(){
             break;
 
         case 'POST':
+            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
+            $tax = filter_input(INPUT_POST, "tax", FILTER_SANITIZE_NUMBER_INT);
             echo postProduct();
             break;
 
