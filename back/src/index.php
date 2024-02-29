@@ -27,4 +27,4 @@ $statement2 = $myPDO->query("SELECT * FROM mytable");
 $data2 = $statement2->fetchALL();
 
 echo "<br>";
-print_r($data2);
+print_r($data);
