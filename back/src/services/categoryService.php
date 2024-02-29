@@ -2,7 +2,7 @@
 header("Acess-Control-Allow-Headers: Content-Type");
 header("Acess-Control-Allow-Methods: GET, POST, DELETE");
 header("Acess-Control-Allow-Origin: *");
-include ('../index.php')
+include ('../index.php');
 
 function getCategories(){
     $categories = myPDO->query('SELECT * FROM categories');
