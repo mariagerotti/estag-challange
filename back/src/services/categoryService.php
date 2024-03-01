@@ -1,7 +1,7 @@
 <?php 
-header("Acess-Control-Allow-Headers: Content-Type");
-header("Acess-Control-Allow-Methods: GET, POST, DELETE");
-header("Acess-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, DELETE, PUT");
 include ('../index.php');
  
 function getCategories(){
@@ -16,8 +16,9 @@ function postCategories($name, $tax){
     return "Criado mudo";
 };
 
-function deleteCategories(){
-    $removeCategories = myPDO->prepare("DELETE FROM CATEGORIES WHERE CODE = 1");
+function deleteCategories($code){
+    $removeCategories = myPDO->prepare("DELETE FROM CATEGORIES WHERE CODE = {$code}");
     $removeCategories->execute();
+    return "apagado";
 };
 ?>

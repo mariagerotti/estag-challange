@@ -18,7 +18,8 @@ function runMethods(){
             break;
 
         case 'DELETE':
-            echo deleteProducts();
+            $delete = $_GET["code"];
+            echo deleteProducts($delete);
             break;
     }
 }
