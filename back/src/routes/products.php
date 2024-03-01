@@ -7,20 +7,21 @@ function runMethods(){
 
     switch($method){
         case 'GET':
-            echo getProduct();
+            echo getProducts();
             break;
 
         case 'POST':
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
-            $tax = filter_input(INPUT_POST, "tax", FILTER_SANITIZE_NUMBER_INT);
-            echo postProduct();
+            $price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_INT);
+            $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_NUMBER_INT);
+            echo postProducts($name, $price, $amount);
             break;
 
         case 'DELETE':
-            echo deleteProduct();
+            echo deleteProducts();
             break;
     }
 }
 
-
+runMethods();
 ?>
