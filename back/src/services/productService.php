@@ -1,7 +1,7 @@
 <?php 
-header("Acess-Control-Allow-Headers: Content-Type");
-header("Acess-Control-Allow-Methods: GET, POST, DELETE");
-header("Acess-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, DELETE, PUT");
 include ('../index.php');
 
 function getProducts(){
@@ -10,8 +10,8 @@ function getProducts(){
     return json_encode($products);
 };
 
-function postProducts($name, $price, $amount){
-    $acProducts = myPDO->prepare("INSERT INTO PRODUCTS (NAME, PRICE, AMOUNT) VALUES ('{$name}', {$price}, {$amount})");
+function postProducts($name, $price, $amount, $category_code){
+    $acProducts = myPDO->prepare("INSERT INTO PRODUCTS (NAME, PRICE, AMOUNT, CATEGORY_CODE) VALUES ('{$name}', {$price}, {$amount}, {$category_code})");
     $acProducts->execute();
     return ("deu certo");
 };
