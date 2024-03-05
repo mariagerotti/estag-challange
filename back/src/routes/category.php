@@ -12,7 +12,7 @@ function runMethods()
 
         case 'POST':
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
-            $tax = filter_input(INPUT_POST, "tax", FILTER_SANITIZE_NUMBER_INT);
+            $tax = filter_input(INPUT_POST, "tax", FILTER_SANITIZE_NUMBER_FLOAT);
             echo postCategories($name, $tax);
             break;
 

@@ -12,8 +12,8 @@ function runMethods(){
 
         case 'POST':
            $code = filter_input(INPUT_POST, "code", FILTER_SANITIZE_NUMBER_INT);
-           $tax = filter_input(INPUT_POST, "tax", FILTER_SANITIZE_NUMBER_INT);
-            $total = filter_input(INPUT_POST, "total", FILTER_SANITIZE_NUMBER_INT);
+           $tax = filter_input(INPUT_POST, "tax", FILTER_SANITIZE_NUMBER_FLOAT);
+            $total = filter_input(INPUT_POST, "total", FILTER_SANITIZE_NUMBER_FLOAT);
             echo postOrders($code, $tax, $total);
             break;
 
