@@ -1,9 +1,4 @@
 <?php 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-header("Access-Control-Allow-Headers: *");
-header("Access-Control-Allow-Methods: GET, POST, DELETE, PUT");
 include ('../index.php');
  
 function getOrder(){
@@ -12,10 +7,17 @@ function getOrder(){
     return json_encode($orders);
 };
 
-function postOrders($code, $tax, $total){
-    $acOrders = myPDO->prepare("INSERT INTO ORDERS (CODE, TAX, TOTAL) VALUES ({$code}, {$tax}, {$total})");
+function postOrders($tax, $total){
+    $id = 1;
+    $orders = myPDO->query("SELECT * FROM ORDERS");
+    $orders = $orders->fetchAll();
+    $orders = count($orders);
+    $id += $orders;
+
+
+    $acOrders = myPDO->prepare("INSERT INTO ORDERS (CODE, TAX, TOTAL) VALUES ({$id}, {$tax}, {$total})");
     $acOrders->execute();
-    return "Criado mudo";
+    return json_encode(array($id));
 };
 
 function deleteOrders($code){
