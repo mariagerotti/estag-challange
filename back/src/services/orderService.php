@@ -14,7 +14,6 @@ function postOrders($tax, $total){
     $orders = count($orders);
     $id += $orders;
 
-
     $acOrders = myPDO->prepare("INSERT INTO ORDERS (CODE, TAX, TOTAL) VALUES ({$id}, {$tax}, {$total})");
     $acOrders->execute();
     return json_encode(array($id));
