@@ -19,4 +19,5 @@ function deleteProducts($code){
     $removeProducts = myPDO->prepare("DELETE FROM PRODUCTS WHERE CODE  = {$code}");
     $removeProducts->execute();
 };
+ 
 ?>
