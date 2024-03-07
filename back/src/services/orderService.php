@@ -8,15 +8,14 @@ function getOrder(){
 };
 
 function postOrders($tax, $total){
-    $id = 1;
+    $code = 1;
     $orders = myPDO->query("SELECT * FROM ORDERS");
     $orders = $orders->fetchAll();
     $orders = count($orders);
-    $id += $orders;
-
-    $acOrders = myPDO->prepare("INSERT INTO ORDERS (CODE, TAX, TOTAL) VALUES ({$id}, {$tax}, {$total})");
+    $code += $orders;
+    $acOrders = myPDO->prepare("INSERT INTO ORDERS (CODE, TAX, TOTAL) VALUES ({$code}, {$tax}, {$total})");
     $acOrders->execute();
-    return json_encode(array($id));
+    return json_encode(array($code));
 };
 
 function deleteOrders($code){
