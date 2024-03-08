@@ -8,12 +8,6 @@ function getOrder(){
 };
 
 function postOrders($tax, $total){
-    // $code = 1;
-    // $orders = myPDO->query("SELECT * FROM ORDERS");
-    // $orders = $orders->fetchAll();
-    // $orders = count($orders);
-    // $code += $orders;
-    
     $acOrders = myPDO->prepare("INSERT INTO ORDERS (TAX, TOTAL) VALUES ( :tax, :total)");
     $acOrders->execute([
         "tax" => (int) $tax,

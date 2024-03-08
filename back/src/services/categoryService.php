@@ -10,7 +10,7 @@ function getCategories(){
 function postCategories($name, $tax){
     $acCategories = myPDO->prepare("INSERT INTO CATEGORIES (NAME, TAX) VALUES ('{$name}', {$tax})");
     $acCategories->execute();
-    return "Criado mudo";
+    return "Criado";
 };
 
 function deleteCategories($code){

@@ -11,7 +11,7 @@ function postOrderItem($order_code, $product_code, $amount, $tax, $price){
     $acorderItem = myPDO->prepare("INSERT INTO ORDER_ITEM (ORDER_CODE, PRODUCT_CODE, AMOUNT, PRICE, TAX) VALUES ({$order_code}, {$product_code}, {$amount}, {$tax}, {$price})");
     $acorderItem->execute();
     updateStok($product_code, $amount);
-    return "Criado mudo";
+    return "Criado";
 };
 
 function deleteOrderItem($code){
