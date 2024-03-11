@@ -2,7 +2,7 @@ import "../ProductsComponents/FormProducts.css";
 
 const FormProducts = () => {
   return (
-    <div class="main main-products">
+    <div className="main main-products">
       <form className="inputs-products" id="inputsProducts">
         <input
           placeholder="Product Name"

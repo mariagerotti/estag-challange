@@ -53,7 +53,7 @@
   th,
   td {
     border-bottom: 0.1vw solid gray;
-    text-align: left;
+    /* text-align: left; */
     padding: 4px;
     border-right: 0.1vw solid gray;
   }
@@ -87,5 +87,11 @@
 
   .main {
     margin: 10px;
+  }
+
+  .main-index {
+    display: flex;
+    height: 100%;
+    padding: 16px;
   }
 }

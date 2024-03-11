@@ -2,8 +2,8 @@ import "../HomeComponents/FormIndex.css";
 
 const FormIndex = () => {
   return (
-    <div class="main main-index" id="mainIndex">
-      <div class="half add-products" id="addProduct">
+    <div className="main main-index" id="mainIndex">
+      <div className="half add-products" id="addProduct">
 
       <form className="amount-tax-price" id="formIndex" required>
         <select id="productName" name="name" data-index="new" required></select>

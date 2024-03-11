@@ -2,7 +2,7 @@ import "../HomeComponents/FinishPurchase.css";
 
 const FinishPurchase = () => {
   return (
-    <div class="main main-index" id="mainIndex">
+    <div className="main main-index" id="mainIndex">
       <div className="finish-add">
         <button className="primary-button" id="cancel">
           Cancel

@@ -2,10 +2,3 @@
     padding: 16px;
   }
   
-  .add-products {
-    padding-right: 36px;
-    flex-direction: column;
-    display: flex;
-    border-right: 0.1vw solid gray;
-    height: 80vh;
-  }

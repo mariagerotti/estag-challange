@@ -1,6 +1,6 @@
 const TableHistory = () => {
   return (
-    <div class="main main-history">
+    <div className="main main-history">
       <div className="table-history">
         <table>
           <thead>

@@ -2,7 +2,7 @@ import "../HomeComponents/TableIndex.css";
 
 const TableIndex = () => {
   return (
-    <div class="main main-index" id="mainIndex">
+    <div className="main main-index" id="mainIndex">
       <div className="half info-products">
         <div className="table-index">
           <table id="tableIndex">
