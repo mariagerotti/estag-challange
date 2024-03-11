@@ -1,6 +1,8 @@
 import Header from "../components/Header";
-import FormIndex from "../components/FormIndex";
-import TableIndex from "../components/TableIndex";
+import FormIndex from "../components/Home Components/FormIndex";
+import TableIndex from "../components/Home Components/TableIndex";
+import TotalTaxIndex from "../components/Home Components/TaxTotalIndex";
+import FinishPurchase from "../components/Home Components/FinishPurchase";
 
 const Home = () => {
   return(
@@ -9,6 +11,8 @@ const Home = () => {
       <Header />
       <FormIndex />
       <TableIndex />
+      <TotalTaxIndex/>
+      <FinishPurchase />
     </div>
     
   )
