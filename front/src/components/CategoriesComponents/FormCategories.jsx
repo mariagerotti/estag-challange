@@ -1,6 +1,9 @@
+import React from "react";
+import './FormCategories.css'
+ 
 const FormCategories = () => {
   return (
-    <form class="inputs-categories" id="inputsCategories" method="post">
+    <form className="inputs-categories" id="inputsCategories" method="post">
       <input
         placeholder="Category Name"
         type="text"

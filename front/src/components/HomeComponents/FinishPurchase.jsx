@@ -1,3 +1,5 @@
+import '../HomeComponents/FinishPurchase.css'
+
 const FinishPurchase = () => {
     return(
         <div className="finish-add">

@@ -31,4 +31,39 @@
     background-color: rgba(128, 128, 128, 0.075);
     border-radius: 6px;
   }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 12px;
+    justify-content: center;
+  }
+
+  button {
+    background-color: #16a34a;
+    transition: background-color 0.3s;
+    border-radius: 1em;
+    border: none;
+    padding: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  th,
+  td {
+    border-bottom: 0.1vw solid gray;
+    text-align: left;
+    padding: 4px;
+    border-right: 0.1vw solid gray;
+  }
+
+  th:last-child,
+  td:last-child {
+    border-right: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    }
 }

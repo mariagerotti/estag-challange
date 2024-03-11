@@ -1,3 +1,5 @@
+import '../HomeComponents/FormIndex.css'
+
 const FormIndex = () => {
     return (
         <form className="amount-tax-price" id="formIndex" required>

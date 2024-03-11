@@ -1,6 +1,8 @@
+import '../ProductsComponents/FormProducts.css'
+
 const FormProducts = () => {
   return (
-    <form class="inputs-products" id="inputsProducts">
+    <form className="inputs-products" id="inputsProducts">
       <input
         placeholder="Product Name"
         type="text"

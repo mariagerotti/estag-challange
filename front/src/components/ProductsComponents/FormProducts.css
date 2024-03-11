@@ -1,0 +1,12 @@
+.inputs-products {
+  padding: 24px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#nameProductsProd,
+#amountProducts,
+#unitPriceProducts,
+#categoryProducts {
+  width: 18%;
+}

@@ -1,0 +1,17 @@
+.amount-tax-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  button, #buttonCreateProduct {
+    background-color: #16a34a;
+    transition: background-color 0.3s;
+    border-radius: 1em;
+    border: none;
+    padding: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+  }

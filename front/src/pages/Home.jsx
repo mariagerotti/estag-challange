@@ -1,8 +1,8 @@
 import Header from "../components/Header";
-import FormIndex from "../components/Home Components/FormIndex";
-import TableIndex from "../components/Home Components/TableIndex";
-import TotalTaxIndex from "../components/Home Components/TaxTotalIndex";
-import FinishPurchase from "../components/Home Components/FinishPurchase";
+import FormIndex from "../components/HomeComponents/FormIndex";
+import TableIndex from "../components/HomeComponents/TableIndex";
+import TotalTaxIndex from "../components/HomeComponents/TaxTotalIndex";
+import FinishPurchase from "../components/HomeComponents/FinishPurchase";
 
 const Home = () => {
   return(

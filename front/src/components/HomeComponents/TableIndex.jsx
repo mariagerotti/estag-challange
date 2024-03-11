@@ -1,3 +1,5 @@
+import '../HomeComponents/TableIndex.css'
+
 const TableIndex = () => {
     return (
 

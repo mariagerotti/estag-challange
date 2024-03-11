@@ -1,3 +1,5 @@
+import '../HomeComponents/TaxTotalIndex.css'
+
 const TotalTaxIndex = () => {
     return(
         <div className="total-tax">

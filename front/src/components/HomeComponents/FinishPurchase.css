@@ -1,0 +1,13 @@
+.finish-add {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1em;
+    margin-top: auto;
+  }
+  .total-tax {
+    margin-top: auto;
+    display: flex;
+    padding: 3%;
+    flex-direction: column;
+  }

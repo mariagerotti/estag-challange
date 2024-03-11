@@ -21,8 +21,9 @@
     width: 100%;
   }
   
-  a,
-  button {
+  a
+  /* ,button  */
+  {
     background-color: #16a34a;
     border: none;
     font-size: 1em;
