@@ -1,5 +1,15 @@
+import Header from "../components/Header";
+import FormIndex from "../components/FormIndex";
+
 const Home = () => {
-  return <h1>home teste</h1>;
+  return(
+    
+    <div className="component-app">
+      <Header />
+      <FormIndex />
+    </div>
+    
+  )
 };
 
 export default Home;

@@ -1,5 +1,12 @@
 const History = () => {
-    return <h1>home</h1>;
+    return (
+
+      <div className="history-component">
+        <h1>Hisory</h1>
+
+      </div>
+    )
+    
   };
   
   export default History;
