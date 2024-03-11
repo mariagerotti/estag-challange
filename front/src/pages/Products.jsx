@@ -1,7 +1,13 @@
+import Header from "../components/Header";
+import FormProducts from "../components/ProductsComponents/FormProducts";
+import TableProducts from "../components/ProductsComponents/TableProducts";
+
 const Products = () => {
   return (
     <div className="categories-component">
-      <h1>products</h1>
+      <Header />
+      <FormProducts />
+      <TableProducts />
     </div>
   )
   };

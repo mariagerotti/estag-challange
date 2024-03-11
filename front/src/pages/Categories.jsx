@@ -1,10 +1,14 @@
 import Header from "../components/Header";
+import FormCategories from "../components/CategoriesComponents/FormCategories.jsx"
+import TableCategories from "../components/CategoriesComponents/TableCategories.jsx"
+
 
 const Categories = () => {
   return (
     <div className="categories-component">
       <Header/>
-      <h1>categories</h1>
+      <FormCategories />
+      <TableCategories />
     </div>
   )
 };

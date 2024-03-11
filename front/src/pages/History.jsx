@@ -1,8 +1,13 @@
+import Header from "../components/Header";
+import TableHistory from "../components/HistoryComponents/TableHistory";
+
 const History = () => {
     return (
 
       <div className="history-component">
-        <h1>Hisory</h1>
+        <Header />
+        <h1>History</h1>
+        <TableHistory />
 
       </div>
     )
