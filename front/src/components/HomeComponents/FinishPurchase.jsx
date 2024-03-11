@@ -1,8 +1,9 @@
-import '../HomeComponents/FinishPurchase.css'
+import "../HomeComponents/FinishPurchase.css";
 
 const FinishPurchase = () => {
-    return(
-        <div className="finish-add">
+  return (
+    <div class="main main-index" id="mainIndex">
+      <div className="finish-add">
         <button className="primary-button" id="cancel">
           Cancel
         </button>
@@ -10,6 +11,7 @@ const FinishPurchase = () => {
           Finish
         </button>
       </div>
-    )
-}
- export default FinishPurchase
+    </div>
+  );
+};
+export default FinishPurchase;

@@ -3,6 +3,8 @@ import './FormCategories.css'
  
 const FormCategories = () => {
   return (
+
+    <div className="main main-categories">
     <form className="inputs-categories" id="inputsCategories" method="post">
       <input
         placeholder="Category Name"
@@ -21,6 +23,7 @@ const FormCategories = () => {
       />
       <button onclick="postarCateg()">Add Category</button>
     </form>
+    </div>
   );
 };
 

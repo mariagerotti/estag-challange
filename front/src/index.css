@@ -15,6 +15,7 @@
   body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
 
   form {
@@ -65,5 +66,26 @@
   img {
     max-width: 100%;
     height: auto;
-    }
+  }
+
+  .primary-button {
+    background-color: gray;
+  }
+
+  .secundary-button {
+    display: block;
+    width: 100%;
+  }
+
+  .finish-button,
+  .primary-button {
+    width: 160px;
+  }
+  .half {
+    width: 50vw;
+  }
+
+  .main {
+    margin: 10px;
+  }
 }
