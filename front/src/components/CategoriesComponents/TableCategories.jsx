@@ -1,5 +1,5 @@
 // import Categories from "../../pages/Categories";
-import Tr from "./TrComponents";
+import TrCategories from "./TrCategories";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -19,9 +19,9 @@ const TableCategories = ( ) => {
     }
   };
 
-  useEffect(() => {
-    getCategories();
-  }, categories);
+  // useEffect(() => {
+  //   getCategories();
+  // }, categories);
   return (
     <div className="main main-categories">
       <div className="table-categories">
