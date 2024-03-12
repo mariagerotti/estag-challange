@@ -5,17 +5,19 @@ import TotalTaxIndex from "../components/HomeComponents/TaxTotalIndex";
 import FinishPurchase from "../components/HomeComponents/FinishPurchase";
 
 const Home = () => {
-  return(
-    
+  return (
     <div className="component-app">
       <Header />
-      <FormIndex />
-      <TableIndex />
-      <TotalTaxIndex/>
-      <FinishPurchase />
+      <div className="div-flex">
+        <FormIndex />
+        <div className="div-align ">
+          <TableIndex />
+          <TotalTaxIndex />
+          <FinishPurchase />
+        </div>
+      </div>
     </div>
-    
-  )
+  );
 };
 
 export default Home;

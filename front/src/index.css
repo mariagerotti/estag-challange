@@ -82,7 +82,7 @@
     width: 160px;
   }
   .half {
-    width: 50vw;
+    width: 45vw;
   }
 
   .main {
@@ -94,4 +94,13 @@
     height: 100%;
     padding: 16px;
   }
+  .div-flex {
+    display: flex;
+  }
+  .div-align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
+
