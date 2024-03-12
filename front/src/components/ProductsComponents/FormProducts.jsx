@@ -32,7 +32,7 @@ const FormProducts = () => {
 
         <select name="category_code" id="categoryProducts"></select>
 
-        <button onclick="postProducts()">Add Product</button>
+        <button onClick="postProducts()">Add Product</button>
       </form>
     </div>
   );
