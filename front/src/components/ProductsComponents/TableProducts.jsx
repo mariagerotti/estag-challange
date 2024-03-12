@@ -4,11 +4,20 @@ import { useState, useEffect } from "react";
 
 const TableProducts = () => {
   const [products, setProducts] = useState([]);
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [amount, setAmount] = useState("");
   
+  const getProducts = async () => {
+    try {
+      const res = await axios.get("http://localhost/routes/products.php")
+      const data = res.data;
 
+      setProducts(data)
+    }catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getProducts();
+  }, [getProducts]);
   return (
     <div className="main main-products">
       <div className="table-products">
@@ -24,7 +33,19 @@ const TableProducts = () => {
             </tr>
           </thead>
 
-          <tbody id="tbodyProducts"></tbody>
+          <tbody id="tbodyProducts">
+            {products?.map((product) => (
+              <TrProducts 
+                key={product.code} 
+                code={product.code} 
+                product={product.name} 
+                price={product.price} 
+                amount={product.amount} 
+                category={product.category}
+              />
+
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

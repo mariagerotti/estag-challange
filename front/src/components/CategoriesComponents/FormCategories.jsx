@@ -9,18 +9,18 @@ const FormCategories = () => {
 
   const postarCateg = async (e) => {
     e.preventDefault();
-    let form = new FormData();
+    let formCategory = new FormData();
     const data = {
       name: name,
       tax: tax,
     };
-    form.append("name", name);
-    form.append("tax", tax);
+    formCategory.append("name", name);
+    formCategory.append("tax", tax);
     console.log(data);
     try {
       const res = await axios.post(
         "http://localhost/routes/category.php",
-        form
+        formCategory
       );
       console.log(res);
     } catch (error) {
@@ -59,7 +59,7 @@ const FormCategories = () => {
             setTax(e.target.value);
           }}
         />
-        <button onClick="postarCateg()">Add Category</button>
+        <button>Add Category</button>
       </form>
     </div>
   );

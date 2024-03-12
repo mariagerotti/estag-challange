@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 
 const TableCategories = ( ) => {
   const [categories, setCategories] = useState([]);
-  const [name, setName] = useState("");
-  const [tax, setTax] = useState("");
 
   const getCategories = async () => {
     try {
@@ -19,9 +17,9 @@ const TableCategories = ( ) => {
     }
   };
 
-  // useEffect(() => {
-  //   getCategories();
-  // }, categories);
+  useEffect(() => {
+    getCategories();
+  }, [getCategories]);
   return (
     <div className="main main-categories">
       <div className="table-categories">
@@ -36,7 +34,7 @@ const TableCategories = ( ) => {
           </thead>
           <tbody id="tbodyCategories">
             {categories?.map((category) => (
-              <Tr code={category.code} name={category.name} tax={category.tax} />
+              <TrCategories key={category.code} code={category.code} name={category.name} tax={category.tax} />
             ))}
           </tbody>
         </table>
