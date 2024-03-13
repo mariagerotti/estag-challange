@@ -1,4 +1,4 @@
-const TrProducts = (code, product, price, amount, category) => {
+const TrProducts = ({code, product, price, amount, category}) => {
   return (
     
       <tr>
