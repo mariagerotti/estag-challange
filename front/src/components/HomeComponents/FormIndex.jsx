@@ -10,7 +10,7 @@ const FormIndex = () => {
   const [price, setPrice] = useState("");
 
   async function changeTaxPrice() {
-    const teste = products.find((prod) => prod.code == product)
+    const teste = products.find((prod) => prod.code == product);
     if (teste) {
       setTax(teste.tax);
       setPrice(teste.price);
@@ -43,7 +43,6 @@ const FormIndex = () => {
       tax: tax,
       price: price,
     };
-    // formProduct.append("order_code", parseInt(code));
 
     formProduct.append("product_code", product);
     formProduct.append("amount", amount);
