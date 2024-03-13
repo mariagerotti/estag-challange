@@ -1,20 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import './index.css'
+import "./index.css";
 import ErrorPage from "./error-page";
-import Home from './pages/Home.jsx'
-import Products from './pages/Products.jsx'
-import Categories from './pages/Categories.jsx'
-import History from './pages/History.jsx'
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Products from "./pages/Products.jsx";
+import Categories from "./pages/Categories.jsx";
+import History from "./pages/History.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/Header.jsx";
 
 const router = createBrowserRouter([
- 
   {
     path: "/",
     element: <Home />,
@@ -37,8 +32,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+      <RouterProvider router={router} />
+  </React.StrictMode>
+);
