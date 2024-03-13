@@ -4,20 +4,20 @@ import { useState, useEffect } from "react";
 
 const TableProducts = () => {
   const [products, setProducts] = useState([]);
-  
-  const getProducts = async () => {
-    try {
-      const res = await axios.get("http://localhost/routes/products.php")
-      const data = res.data;
 
-      setProducts(data)
-    }catch (error) {
-      console.log(error);
-    }
-  }
   useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get("http://localhost/routes/products.php");
+        const data = res.data;
+
+        setProducts(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getProducts();
-  }, [getProducts]);
+  }, []);
   return (
     <div className="main main-products">
       <div className="table-products">
@@ -35,15 +35,14 @@ const TableProducts = () => {
 
           <tbody id="tbodyProducts">
             {products?.map((product) => (
-              <TrProducts 
-                key={product.code} 
-                code={product.code} 
-                product={product.name} 
-                price={product.price} 
-                amount={product.amount} 
-                category={product.category}
+              <TrProducts
+                key={product.code}
+                code={product.code}
+                product={product.name}
+                price={product.price}
+                amount={product.amount}
+                category={product.category_code}
               />
-
             ))}
           </tbody>
         </table>

@@ -1,13 +1,26 @@
 import axios from "axios";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import "../ProductsComponents/FormProducts.css";
 
 const FormProducts = () => {
+  const [categories, setCategories] = useState([]);
+  const [category, setCategory] = useState([]);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const res = await axios.get("http://localhost/routes/category.php");
+        const data = res.data;
+        setCategories(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getCategories();
+  }, []);
 
   const postarProd = async (e) => {
     e.preventDefault();
@@ -16,22 +29,24 @@ const FormProducts = () => {
       name: name,
       amount: amount,
       price: price,
-      category: category,
+      category_code: category,
     };
     formProduct.append("name", name);
     formProduct.append("amount", amount);
     formProduct.append("price", price);
-    formProduct.append("category", category);
+    formProduct.append("category_code", category);
     console.log(data);
     try {
       const res = await axios.post(
         "http://localhost/routes/products.php",
-        formProduct
+        formProduct,
+        window.location.reload()
       );
       console.log(res);
     } catch (error) {
       console.error(error);
     }
+ 
   };
 
   return (
@@ -86,14 +101,12 @@ const FormProducts = () => {
             setCategory(e.target.value);
           }}
         >
-
           <option hidden>Select Category</option>
-          {category.map((cat) => (
+          {categories?.map((cat) => (
             <option key={cat.code} value={cat.code}>
               {cat.name}
             </option>
           ))}
-   
         </select>
 
         <button>Add Product</button>
