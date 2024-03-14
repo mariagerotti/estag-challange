@@ -1,11 +1,9 @@
 // import { selectProductsCount } from "../../redux/cart/cartSelectors";
 import "../HomeComponents/TableIndex.css";
 import TrHome from "./TrHome";
-// import { useState } from "react";
 import { useSelector } from "react-redux";
 
 const TableIndex = () => {
-  // const [cart, setCart] = useState([]);
 
   const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
   // const {productsTotalPrice} = useSelector(selectProductsCount);

@@ -20,7 +20,8 @@ const cartReducer = (state = initialState, action) => {
             if (product.code == action.payload.code) {
               return {
                 ...product,
-                amount: parseInt(product.amount) + parseInt(action.payload.amount),
+                amount:
+                  parseInt(product.amount) + parseInt(action.payload.amount),
               };
             } else {
               return product;
@@ -30,8 +31,25 @@ const cartReducer = (state = initialState, action) => {
       }
       return {
         ...state,
-        products: [...state.products, { ...action.payload, amount: action.payload.amount }],
+        products: [
+          ...state.products,
+          { ...action.payload, amount: action.payload.amount },
+        ],
       };
+    case cartActionTypes.CLEAR_CART:
+      return {
+        ...state,
+        products: [],
+        productsTotalPrice: 0,
+        productsTotalTax: 0,
+        productsTotalAmount: 0,
+      };
+
+    // case CartActionTypes.CANCEL_CART:
+    //     return{
+    //         ...initialState,
+    //     }
+    // }
     default:
       return state;
   }
@@ -57,8 +75,7 @@ const cartReducer = (state = initialState, action) => {
 //         const productsTotalTaxFiltered = productsFiltered.reduce((acc, prod) => acc + prod.tax * prod.amount, 0);
 //         const productsTotalAmountFiltered = productsFiltered.reduce((acc, prod) => acc + prod.amount, 0);
 //         return { ...state, products: productsFiltered, productsTotalPrice: productsTotalPriceFiltered, productsTotalTax: productsTotalTaxFiltered, productsTotalAmount: productsTotalAmountFiltered };
-//     case "CLEAR_CART":
-//         return { ...state, products: [], productsTotalPrice: 0, productsTotalTax: 0, productsTotalAmount: 0 };
+
 //     default:
 //         return state;
 // }

@@ -9,3 +9,7 @@ export const selectProductsTotalPrice = (rootReducer) => {
 export const selectProductsTotalTax = (rootReducer) => {
     return rootReducer.cartReducer.products.reduce((acc, curr) => acc + curr.tax * curr.amount, 0);
 }
+
+export const selectCancelPurchase = (rootReducer) => {
+    return rootReducer.cartReducer.products.length === 0;
+}
