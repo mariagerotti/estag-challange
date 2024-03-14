@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
 // import { loginUser, logoutUser } from "../redux/user/actions";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 // import { UseSelector, useDispatch } from 'react-redux';
 
 const Header = () => {
