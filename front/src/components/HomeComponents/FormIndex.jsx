@@ -21,8 +21,6 @@ const FormIndex = () => {
       setTax(teste.tax);
       setPrice(teste.price);
       setName(teste.name);
-
-       
       setCategoryName(teste.categoryname)
     }
   }

@@ -39,18 +39,7 @@ const Home = () => {
     createOrder();
   }, []);
 
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await axios.get("http://localhost/routes/products.php");
-        const data = res.data;
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getProducts();
-  }, []);
+
   return (
     <div className="component-app">
       <Header />
