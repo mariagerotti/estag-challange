@@ -1,4 +1,5 @@
 import axios from "axios";
+// import PayPurchase from './PayPurchase';
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../redux/cart/actions";
@@ -130,6 +131,7 @@ const FormIndex = () => {
             onClick={executa2func}
           ></input>
         </form>
+        {/* <PayPurchase /> */}
       </div>
     </div>
   );

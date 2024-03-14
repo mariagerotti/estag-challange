@@ -13,6 +13,7 @@ const TableIndex = () => {
       <div className="half info-products">
         <div className="table-index">
           <table id="tableIndex">
+            
             <thead>
               <tr>
                 <th>code</th>
@@ -40,6 +41,8 @@ const TableIndex = () => {
           </table>
         </div>
       </div>
+      
+    
     </div>
   );
 };
