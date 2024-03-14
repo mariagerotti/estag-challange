@@ -5,35 +5,40 @@ const initialState = {
   productsTotalPrice: 0,
   productsTotalTax: 0,
   productsTotalAmount: 0,
-  
 };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case cartActionTypes.ADD_PRODUCT:
       //   return { ...initialState, products: [...state.products, action.payload] };
+      console.table([state.products, "joao", action.payload.code]);
       const productIsAlreadyInCart = state.products.some(
         (product) => product.code === action.payload.code
       );
       if (productIsAlreadyInCart) {
         return {
           ...state,
-          products: state.products.map((product) =>
-            product.code === action.payload.code
-              ? //   ? { ...product, amount: product.amount + action.payload.amount }
-                { ...product, amount: product.amount + 1 }
-              : product
-          ),
+          products: state.products.map((product) => {
+            if (product.code == action.payload.code) {
+              return {
+                ...product,
+                amount: parseInt(product.amount) + parseInt(action.payload.amount),
+              };
+            } else {
+              return product;
+            }
+          }),
         };
       }
       return {
         ...state,
-        products: [...state.products, { ...action.payload, amount: 1 }],
+        products: [...state.products, { ...action.payload, amount: action.payload.amount }],
       };
     default:
       return state;
   }
 };
+
 // switch (action.type) {
 //     case "ADD_PRODUCT":
 //         const product = action.payload;

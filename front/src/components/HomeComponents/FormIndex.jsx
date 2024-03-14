@@ -9,15 +9,18 @@ const FormIndex = () => {
   const [product, setProduct] = useState("");
   const [amount, setAmount] = useState("");
   const [tax, setTax] = useState("");
+  const [name, setName] = useState("");
+  const [categoryName, setCategoryName] = useState("");
   const [price, setPrice] = useState("");
-
-
 
   async function changeTaxPrice() {
     const teste = products.find((prod) => prod.code == product);
     if (teste) {
+      console.log(teste);
       setTax(teste.tax);
       setPrice(teste.price);
+      setName(teste.name);
+      setCategoryName(teste.categoryname)
     }
   }
   useEffect(() => {
@@ -37,20 +40,22 @@ const FormIndex = () => {
     getProducts();
   }, []);
   const dispatch = useDispatch();
-const handleProductClick = () => {
+  const handleProductClick = () => {
     dispatch(
       addProductToCart({
-        name: product,
+        code: product,
+        name: name,
         amount: amount,
         tax: tax,
         price: price,
+        categoryName: categoryName
       })
     );
   };
   const executa2func = (e) => {
     e.preventDefault();
-  handleProductClick();
-  }
+    handleProductClick();
+  };
   return (
     <div className="main main-index" id="mainIndex">
       <div className="half add-products" id="addProduct">

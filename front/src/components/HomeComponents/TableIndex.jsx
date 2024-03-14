@@ -32,7 +32,7 @@ const TableIndex = () => {
                   name={product.name}
                   amount={product.amount}
                   price={product.price}
-                  category={product.category}
+                  category={product.categoryName}
                   total={product.total}
                 />
               ))}

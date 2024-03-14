@@ -17,11 +17,11 @@ const Header = () => {
   //   // dispatch();
   // }
 
-  const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
+  // const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
   // const total = products.reduce((acc, prod) => acc + prod.amount, 0);
-  const productsCount = useMemo(() => {
-    return products.reduce((acc, prod) => acc + prod.amount, 0);
-  }, [products]);
+  // const productsCount = useMemo(() => {
+  //   return products.reduce((acc, prod) => acc + prod.amount, 0);
+  // }, [products]);
 
   return (
     <div className="container__header">
@@ -33,7 +33,7 @@ const Header = () => {
       </div>
 
       <div className="header__nav">
-        <Link to="/">Home ({productsCount})</Link>
+        <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/categories">Categories</Link>
         <Link to="/history">History</Link>
