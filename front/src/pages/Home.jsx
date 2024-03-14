@@ -10,7 +10,8 @@ const Home = () => {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
-
+  const [tax, setTax] = useState(0);
+  const [total, setTotal] = useState(0);
   useEffect(() => {
     const createOrder = async (order) => {
       try {

@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import "../HomeComponents/TaxTotalIndex.css";
+import { useSelector } from "react-redux";
 
 const TotalTaxIndex = () => {
+  const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
+
+  useEffect(() => {
+    console.log(products);
+  }, [products]);
+
   return (
     <div className="main main-index" id="mainIndex">
       <div className="total-tax">

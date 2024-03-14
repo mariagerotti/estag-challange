@@ -10,8 +10,6 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case cartActionTypes.ADD_PRODUCT:
-      //   return { ...initialState, products: [...state.products, action.payload] };
-      console.table([state.products, "joao", action.payload.code]);
       const productIsAlreadyInCart = state.products.some(
         (product) => product.code === action.payload.code
       );
