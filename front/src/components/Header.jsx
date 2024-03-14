@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { loginUser, logoutUser } from "../redux/user/actions";
+// import { useSelector } from "react-redux";
 // import { UseSelector, useDispatch } from 'react-redux';
 
 const Header = () => {
@@ -9,11 +10,12 @@ const Header = () => {
   // const dispatch = useDispatch();
 
   // const handleLoginCLick = () => {
-  //   dispatch({
-  //     type: "user/login",
-  //     payload: { name: "maria", email: "maria@top.com" },
-  //   });
+  //   dispatch((loginUser({ name: "maria", email: "maria@top.com"})));
   // };
+
+  // const handleLogoutCLick = () => {
+  //   // dispatch();
+  // }
   return (
     <div className="container__header">
       <div className="header__title">
@@ -28,7 +30,12 @@ const Header = () => {
         <Link to="/products">Products</Link>
         <Link to="/categories">Categories</Link>
         <Link to="/history">History</Link>
-        {/* <Link to="/login" onClick={handleLoginCLick}></Link> */}
+        {/* {currentUser ? (
+          <div onClick={handleLogoutCLick}>sair</div>)
+          : (
+           
+        <Link to="/login" onClick={handleLoginCLick}></Link> 
+          )} */}
       </div>
     </div>
   );
