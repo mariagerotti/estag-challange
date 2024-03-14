@@ -11,4 +11,5 @@ const TrHome = ({ code, name, amount, price, category, total }) => {
   );
 };
 
+
 export default TrHome;

@@ -58,7 +58,7 @@ const Home = () => {
         <FormIndex setCart={setCart} cart={cart} />
         <div className="div-align ">
           <TableIndex setCart={setCart} cart={cart} />
-          <TotalTaxIndex />
+          <TotalTaxIndex setTax={setTax} tax={tax} setTotal={setTotal} total={total}/>
           <FinishPurchase />
         </div>
       </div>

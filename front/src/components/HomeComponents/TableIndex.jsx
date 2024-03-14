@@ -1,3 +1,4 @@
+// import { selectProductsCount } from "../../redux/cart/cartSelectors";
 import "../HomeComponents/TableIndex.css";
 import TrHome from "./TrHome";
 // import { useState } from "react";
@@ -7,7 +8,8 @@ const TableIndex = () => {
   // const [cart, setCart] = useState([]);
 
   const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
-  
+  // const {productsTotalPrice} = useSelector(selectProductsCount);
+  // console.log(productsTotalPrice);
   return (
     <div className="main main-index" id="mainIndex">
       <div className="half info-products">
@@ -33,7 +35,7 @@ const TableIndex = () => {
                   amount={product.amount}
                   price={product.price}
                   category={product.categoryName}
-                  total={product.total}
+                  total={product.price * product.amount}
                 />
               ))}
             </tbody>
