@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {addProductToCart} from "../../redux/cart/actions"
 import "../HomeComponents/FormIndex.css";
 
 const FormIndex = () => {
@@ -16,7 +18,6 @@ const FormIndex = () => {
       setPrice(teste.price);
     }
   }
-
   useEffect(() => {
     changeTaxPrice();
   }, [product]);
@@ -33,32 +34,10 @@ const FormIndex = () => {
     };
     getProducts();
   }, []);
-
-  const postarProd = async (e) => {
-    e.preventDefault();
-    let formProduct = new FormData();
-    const data = {
-      product_code: product,
-      amount: amount,
-      tax: tax,
-      price: price,
-    };
-
-    formProduct.append("product_code", product);
-    formProduct.append("amount", amount);
-    formProduct.append("price", price);
-    formProduct.append("tax", tax);
-    console.log(data);
-    try {
-      const res = await axios.post(
-        "http://localhost/routes/order.php",
-        formProduct
-      );
-      console.log(res);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+const dispatch = useDispatch();
+  const handleProductClick = () => {
+    dispatch(addProductToCart({name: product, amount: amount, tax: tax, price: price}));
+  }
 
   return (
     <div className="main main-index" id="mainIndex">
@@ -67,10 +46,10 @@ const FormIndex = () => {
           className="amount-tax-price"
           id="formIndex"
           required
-          onSubmit={(e) => {
-            e.preventDefault();
-            postarProd(e);
-          }}
+          // onSubmit={(e) => {
+          //   e.preventDefault();
+          //   postarProd(e);
+          // }}
         >
           <select
             id="productName"
@@ -129,6 +108,7 @@ const FormIndex = () => {
             id="buttonCreateProduct"
             type="submit"
             value="Add Product"
+            onClick={handleProductClick}
           ></input>
         </form>
       </div>
