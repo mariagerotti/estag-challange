@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {addProductToCart} from "../../redux/cart/actions"
+import { addProductToCart } from "../../redux/cart/actions";
 import "../HomeComponents/FormIndex.css";
 
 const FormIndex = () => {
@@ -10,6 +10,8 @@ const FormIndex = () => {
   const [amount, setAmount] = useState("");
   const [tax, setTax] = useState("");
   const [price, setPrice] = useState("");
+
+
 
   async function changeTaxPrice() {
     const teste = products.find((prod) => prod.code == product);
@@ -34,11 +36,21 @@ const FormIndex = () => {
     };
     getProducts();
   }, []);
-const dispatch = useDispatch();
-  const handleProductClick = () => {
-    dispatch(addProductToCart({name: product, amount: amount, tax: tax, price: price}));
+  const dispatch = useDispatch();
+const handleProductClick = () => {
+    dispatch(
+      addProductToCart({
+        name: product,
+        amount: amount,
+        tax: tax,
+        price: price,
+      })
+    );
+  };
+  const executa2func = (e) => {
+    e.preventDefault();
+  handleProductClick();
   }
-
   return (
     <div className="main main-index" id="mainIndex">
       <div className="half add-products" id="addProduct">
@@ -108,7 +120,7 @@ const dispatch = useDispatch();
             id="buttonCreateProduct"
             type="submit"
             value="Add Product"
-            onClick={handleProductClick}
+            onClick={executa2func}
           ></input>
         </form>
       </div>
