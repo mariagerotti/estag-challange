@@ -39,8 +39,8 @@ const TableHistory = () => {
                 tax={order.tax}
                 total={order.total}
                 details={order.details}
-              />
-            ))}
+                />
+                ))}
           </tbody>
         </table>
         <br />
