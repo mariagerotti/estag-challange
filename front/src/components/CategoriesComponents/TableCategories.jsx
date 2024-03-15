@@ -3,7 +3,7 @@ import TrCategories from "./TrCategories";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const TableCategories = ( ) => {
+const TableCategories = () => {
   const [categories, setCategories] = useState([]);
 
   const getCategories = async () => {
@@ -17,9 +17,21 @@ const TableCategories = ( ) => {
     }
   };
 
+  const deleteCategory = async (code) => {
+    try {
+      await fetch(`http://localhost/routes/category.php?code=${code}`, {
+        method: "DELETE",
+      });
+      await getCategories();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     getCategories();
   }, [getCategories]);
+
   return (
     <div className="main main-categories">
       <div className="table-categories">
@@ -34,7 +46,13 @@ const TableCategories = ( ) => {
           </thead>
           <tbody id="tbodyCategories">
             {categories?.map((category) => (
-              <TrCategories key={category.code} code={category.code} name={category.name} tax={category.tax} />
+              <TrCategories
+                key={category.code}
+                code={category.code}
+                name={category.name}
+                tax={category.tax}
+                deleteFunction={() => {deleteCategory(category.code)}}
+              />
             ))}
           </tbody>
         </table>
@@ -42,5 +60,6 @@ const TableCategories = ( ) => {
     </div>
   );
 };
+
 
 export default TableCategories;

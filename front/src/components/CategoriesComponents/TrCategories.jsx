@@ -1,13 +1,14 @@
+import { useEffect, useState } from "react";
 import DeleteCategories from "./DeleteCategories";
 
-const TrCategories = ({ code, name, tax }) => {
+const TrCategories = ({ code, name, tax, deleteFunction }) => {
   return (
     <tr>
       <td>{code}</td>
       <td>{name}</td>
       <td>{tax}</td>
       <td>
-        <DeleteCategories code={code} />
+        <DeleteCategories onclick={deleteFunction} />
       </td>
     </tr>
   );
