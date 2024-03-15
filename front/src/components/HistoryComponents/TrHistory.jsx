@@ -7,7 +7,7 @@ return (
         <td>{code}</td>
         <td>{tax}</td>
         <td>{total}</td>
-        <td><ButtonDetails code={code}/></td>
+        <td><ButtonDetails orderCode={code}/></td>
        
     </tr>
 )
