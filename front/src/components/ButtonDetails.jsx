@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-// {orderCode} props passada
-const ButtonDetails = () => {
+//  props passada
+const ButtonDetails = ({orderCode}) => {
   
   return (
     <Link  >
-      <button className="secundary-button">View Details</button>
+      <button className="secundary-button" onClick={orderCode}>View Details</button>
     </Link>
   );
 };

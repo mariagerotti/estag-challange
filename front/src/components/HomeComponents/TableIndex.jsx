@@ -4,16 +4,17 @@ import TrHome from "./TrHome";
 import { useSelector } from "react-redux";
 
 const TableIndex = () => {
-
-  const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
+  const { products } = useSelector(
+    (rootReducer) => rootReducer.cartReducer
+  );
   // const {productsTotalPrice} = useSelector(selectProductsCount);
   // console.log(productsTotalPrice);
+
   return (
     <div className="main main-index" id="mainIndex">
       <div className="half info-products">
         <div className="table-index">
           <table id="tableIndex">
-            
             <thead>
               <tr>
                 <th>code</th>
@@ -41,8 +42,6 @@ const TableIndex = () => {
           </table>
         </div>
       </div>
-      
-    
     </div>
   );
 };

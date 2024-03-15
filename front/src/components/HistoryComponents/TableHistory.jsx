@@ -18,6 +18,18 @@ const TableHistory = () => {
     };
     getOrder();
   }, []);
+
+  const viewPurchaseDetails = async (code) => {
+    try {
+      const res = await axios.get(
+        `http://localhost/routes/order.php?code=${code}`
+      );
+      const data = res.data;
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="main main-history">
       <div className="table-history">
@@ -39,6 +51,9 @@ const TableHistory = () => {
                 tax={order.tax}
                 total={order.total}
                 details={order.details}
+                orderCode={() => {
+                  viewPurchaseDetails(order.code);
+                }}
                 />
                 ))}
           </tbody>

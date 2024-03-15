@@ -14,6 +14,18 @@ const FormIndex = () => {
   const [categoryName, setCategoryName] = useState("");
   const [price, setPrice] = useState("");
 
+const clearFormAftwerSubmit = () => {
+  setProduct("");
+  setAmount("");
+  setTax("");
+  setName("");
+  setCategoryName("");
+  setPrice("");
+}
+
+
+
+
   async function changeTaxPrice() {
     const teste = products.find((prod) => prod.code == product);
     if (teste) {
