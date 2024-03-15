@@ -53,16 +53,29 @@ const FinishPurchase = () => {
       console.log(error);
     }
 
-    const order = {
-      products: products,
-      total: productsTotalPrice,
-      tax: productsTotalTax,
-    };
+    const order = new FormData();
+
+    order.append("products", products);
+    order.append("total", productsTotalPrice);
+    order.append("tax", productsTotalTax);
 
     try {
       const res = await axios.post("http://localhost/routes/order.php", order);
       console.log(res);
       alert("Purchase completed");
+      cart.forEach(async (item) => {
+        let form = new FormData();
+        form.append("order_code", parseInt(res.data.code));
+        form.append("product_code", item.code);
+        form.append("amount", parseInt(item.amount));
+        form.append("price", parseFloat(item.price) * parseInt(item.amount));
+        form.append("tax", parseFloat(item.tax) * parseInt(item.amount));
+
+        await fetch("http://localhost/routes/orderItem.php", {
+          method: "post",
+          body: form,
+        });
+      });
     } catch (error) {
       console.log(error);
     }
