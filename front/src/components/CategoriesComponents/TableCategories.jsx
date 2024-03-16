@@ -17,17 +17,6 @@ const TableCategories = () => {
     }
   };
 
-  const deleteCategory = async (code) => {
-    try {
-      await fetch(`/routes/category.php?code=${code}`, {
-        method: 'DELETE'
-      });
-      await getCategories();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
     getCategories();
   }, [getCategories]);
@@ -51,9 +40,6 @@ const TableCategories = () => {
                 code={category.code}
                 name={category.name}
                 tax={category.tax}
-                deleteFunction={() => {
-                  deleteCategory(category.code);
-                }}
               />
             ))}
           </tbody>
