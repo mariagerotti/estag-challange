@@ -45,15 +45,18 @@ const FormProducts = () => {
     }
   };
 
+  const handleProductClick = (e) => {
+    e.preventDefault();
+    postarProd(e);
+    e.target.reset();
+  }
+
   return (
     <div className='main main-products'>
       <form
         className='inputs-products'
         id='inputsProducts'
-        onSubmit={(e) => {
-          e.preventDefault();
-          postarProd(e);
-        }}>
+        onSubmit={handleProductClick}>
         <input
           placeholder='Product Name'
           type='text'

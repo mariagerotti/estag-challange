@@ -6,6 +6,7 @@ const FormCategories = () => {
   const [name, setName] = useState('');
   const [tax, setTax] = useState('');
 
+
   const postarCateg = async (e) => {
     e.preventDefault();
     let formCategory = new FormData();
@@ -24,15 +25,18 @@ const FormCategories = () => {
     }
   };
 
+  const handleCategoryClick = (e) => {
+    e.preventDefault();
+    postarCateg(e);
+    e.target.reset();
+  }
+
   return (
     <div className='main main-categories'>
       <form
         className='inputs-categories'
         id='inputsCategories'
-        onSubmit={(e) => {
-          e.preventDefault();
-          postarCateg(e);
-        }}>
+        onSubmit={handleCategoryClick}>
         <input
           placeholder='Category Name'
           type='text'
