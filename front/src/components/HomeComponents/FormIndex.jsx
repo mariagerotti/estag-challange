@@ -13,12 +13,10 @@ const FormIndex = () => {
   const [categoryName, setCategoryName] = useState('');
   const [price, setPrice] = useState('');
 
-  const clearFormAftwerSubmit = () => {
-    setProduct('');
-    setAmount('');
+  const clearFormAfterSubmit = () => {
+    // setProduct('');
+    // setAmount('');
     setTax('');
-    setName('');
-    setCategoryName('');
     setPrice('');
   };
 
@@ -61,12 +59,14 @@ const FormIndex = () => {
       })
     );
   };
-  const executa2func = (e) => {
+  const addFinalProduct = (e) => {
     e.preventDefault();
     handleProductClick();
+    clearFormAfterSubmit();
+    e.target.reset();
   };
   return (
-    <form className='amount-tax-price' onSubmit={executa2func}>
+    <form className='amount-tax-price' onSubmit={addFinalProduct}>
       <select name='name' required onChange={(e) => setProduct(e.target.value)}>
         <option>Select a Product</option>
         {products?.map((prod) => (
