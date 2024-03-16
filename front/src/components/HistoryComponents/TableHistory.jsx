@@ -8,9 +8,7 @@ const TableHistory = () => {
   useEffect(() => {
     const getOrder = async () => {
       try {
-        const res = await axios.get('/routes/order.php');
-        const data = res.data;
-
+        const { data } = await axios.get('/routes/order.php');
         setOrders(data);
       } catch (error) {
         console.log(error);
@@ -42,18 +40,7 @@ const TableHistory = () => {
           </thead>
 
           <tbody id='tbodyHistory'>
-            {orders?.map((order) => (
-              <TrHistory
-                key={order.code}
-                code={order.code}
-                tax={order.tax}
-                total={order.total}
-                details={order.details}
-                orderCode={() => {
-                  viewPurchaseDetails(order.code);
-                }}
-              />
-            ))}
+            {orders.length > 0 && orders?.map((order) => <TrHistory key={order.code} order={order} />)}
           </tbody>
         </table>
         <br />

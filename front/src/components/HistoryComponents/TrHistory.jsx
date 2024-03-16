@@ -1,16 +1,17 @@
-import ButtonDetails from "../ButtonDetails";
+import { Link } from 'react-router-dom';
+import ButtonDetails from '../ButtonDetails';
 
-
-const TrHistory = ({code, tax, total, orderCode}) => {
-return (
+const TrHistory = ({ order }) => {
+  return (
     <tr>
-        <td>{code}</td>
-        <td>{tax}</td>
-        <td>{total}</td>
-        <td><ButtonDetails onClick={orderCode}/></td>
-       
+      <td>{order.code}</td>
+      <td>{order.tax}</td>
+      <td>{order.total}</td>
+      <td>
+        <Link to={`/viewDetails/${order.code}`}>Details</Link>
+      </td>
     </tr>
-)
-}
+  );
+};
 
 export default TrHistory;

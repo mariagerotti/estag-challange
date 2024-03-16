@@ -1,6 +1,6 @@
-import '../../assets/styleDelete.css';
+import './DeleteButton.css';
 
-const DeleteCategories = ({ onclick }) => {
+const DeleteButton = ({ onclick }) => {
   return (
     <button onClick={onclick} className='button'>
       <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 69 14' className='svgIcon bin-top'>
@@ -32,4 +32,4 @@ const DeleteCategories = ({ onclick }) => {
   );
 };
 
-export default DeleteCategories;
+export default DeleteButton;

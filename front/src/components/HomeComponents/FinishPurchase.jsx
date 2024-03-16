@@ -42,7 +42,6 @@ const FinishPurchase = () => {
         const product = products.find((product) => product.code == item.code);
         if (product.amount > item.amount) {
           alert(`Product ${product.name} has only ${product.amount} in stock`);
-          // clearTableAfterSubmit();
           return;
         }
       });
@@ -57,7 +56,7 @@ const FinishPurchase = () => {
     order.append('tax', productsTotalTax);
 
     try {
-      const res = await axios.post('http://localhost/routes/order.php', order);
+      const res = await axios.post('/routes/order.php', order);
       console.log(res);
       alert('Purchase completed');
       cart.forEach(async (item) => {
@@ -68,10 +67,7 @@ const FinishPurchase = () => {
         form.append('price', parseFloat(item.price) * parseInt(item.amount));
         form.append('tax', parseFloat(item.tax) * parseInt(item.amount));
 
-        await fetch('http://localhost/routes/orderItem.php', {
-          method: 'post',
-          body: form
-        });
+        await axios.post('/routes/orderItem.php', form);
       });
     } catch (error) {
       console.log(error);

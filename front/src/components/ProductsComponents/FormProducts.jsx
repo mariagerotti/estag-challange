@@ -12,8 +12,9 @@ const FormProducts = () => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const res = await axios.get('/routes/category.php');
-        const data = res.data;
+        const { data } = await axios.get('/routes/category.php');
+
+        console.log(data);
         setCategories(data);
       } catch (error) {
         console.log(error);

@@ -1,4 +1,13 @@
-.info-products {
-    padding: 16px;
-  }
-  
+table{
+  border-collapse: collapse;
+  width: 100%;
+  padding: 12px;
+  justify-content: center;
+}
+
+table th, table td {
+  border-bottom: 0.1vw solid gray;
+  padding: 4px;
+  border-right: 0.1vw solid gray;
+}
+

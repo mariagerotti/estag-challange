@@ -1,5 +1,4 @@
 import axios from '../../lib/axios';
-// import PayPurchase from './PayPurchase';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProductToCart } from '../../redux/cart/actions';
@@ -26,7 +25,6 @@ const FormIndex = () => {
   async function changeTaxPrice() {
     const teste = products.find((prod) => prod.code == product);
     if (teste) {
-      console.log(teste);
       setTax(teste.tax);
       setPrice(teste.price);
       setName(teste.name);
@@ -50,6 +48,7 @@ const FormIndex = () => {
     getProducts();
   }, []);
   const dispatch = useDispatch();
+
   const handleProductClick = () => {
     dispatch(
       addProductToCart({
@@ -67,78 +66,52 @@ const FormIndex = () => {
     handleProductClick();
   };
   return (
-    <div className='main main-index' id='mainIndex'>
-      <div className='half add-products' id='addProduct'>
-        <form
-          className='amount-tax-price'
-          id='formIndex'
-          required
-          // onSubmit={(e) => {
-          //   e.preventDefault();
-          //   postarProd(e);
-          // }}
-        >
-          <select
-            id='productName'
-            name='name'
-            data-index='new'
-            required
-            onChange={(e) => {
-              setProduct(e.target.value);
-            }}>
-            <option hidden>Select a Product</option>
-            {products?.map((prod) => (
-              <option key={prod.code} value={prod.code}>
-                {prod.name}
-              </option>
-            ))}
-          </select>
+    <form className='amount-tax-price' onSubmit={executa2func}>
+      <select name='name' required onChange={(e) => setProduct(e.target.value)}>
+        <option>Select a Product</option>
+        {products?.map((prod) => (
+          <option key={prod.code} value={prod.code}>
+            {prod.name}
+          </option>
+        ))}
+      </select>
 
-          <input
-            required
-            placeholder='Amount'
-            type='number'
-            name='amount'
-            id='amount'
-            min='1'
-            onChange={(e) => {
-              setAmount(e.target.value);
-            }}
-          />
+      <input
+        required
+        placeholder='Amount'
+        type='number'
+        name='amount'
+        min='1'
+        onChange={(e) => {
+          setAmount(e.target.value);
+        }}
+      />
 
-          <input
-            disabled
-            placeholder='Tax'
-            type='number'
-            name='tax'
-            id='tax'
-            value={tax}
-            onChange={(e) => {
-              setTax(e.target.value);
-            }}
-          />
+      <input
+        disabled
+        placeholder='Tax'
+        type='number'
+        name='tax'
+        value={tax}
+        onChange={(e) => {
+          setTax(e.target.value);
+        }}
+      />
 
-          <input
-            disabled
-            placeholder='Price'
-            type='number'
-            name='price'
-            id='price'
-            value={price}
-            onChange={(e) => {
-              setPrice(e.target.value);
-            }}
-          />
-          <input
-            className='secundary-button'
-            id='buttonCreateProduct'
-            type='submit'
-            value='Add Product'
-            onClick={executa2func}></input>
-        </form>
-        {/* <PayPurchase /> */}
-      </div>
-    </div>
+      <input
+        disabled
+        placeholder='Price'
+        type='number'
+        name='price'
+        value={price}
+        onChange={(e) => {
+          setPrice(e.target.value);
+        }}
+      />
+      <button className='secundary-button' type='submit'>
+        Add product
+      </button>
+    </form>
   );
 };
 

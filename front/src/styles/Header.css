@@ -1,7 +1,6 @@
 .container__header {
     display: flex;
-    /* width: 100%; */
-    padding: 0 6em 0 6em;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -14,11 +13,9 @@
   .header__nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: 1em;
     list-style: none;
-    max-width: 300px;
-    width: 100%;
+    margin-right: 2em;
   }
   
   a
@@ -32,6 +29,7 @@
     transition: background-color 0.3s;
     text-decoration: none;
     border-radius: 1em;
+    padding: 0.5em 1em;
   }
   
   a:hover,
@@ -45,6 +43,8 @@
     align-items: center;
     gap: 0.5em;
     color: white;
+    margin-left: 2em;
+
   }
   
   .header__logo {

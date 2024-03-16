@@ -1,18 +1,18 @@
-import cartActionTypes from "./actionTypes";
+import cartActionTypes from './actionTypes';
 
 const initialState = {
   products: [],
   productsTotalPrice: 0,
   productsTotalTax: 0,
-  productsTotalAmount: 0,
+  productsTotalAmount: 0
 };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case cartActionTypes.ADD_PRODUCT:
-      const productIsAlreadyInCart = state.products.some(
-        (product) => product.code === action.payload.code
-      );
+      //-------------------------------------------------------------------------
+
+      const productIsAlreadyInCart = state.products.some((product) => product.code === action.payload.code);
       if (productIsAlreadyInCart) {
         return {
           ...state,
@@ -20,29 +20,26 @@ const cartReducer = (state = initialState, action) => {
             if (product.code == action.payload.code) {
               return {
                 ...product,
-                amount:
-                  parseInt(product.amount) + parseInt(action.payload.amount),
+                amount: parseInt(product.amount) + parseInt(action.payload.amount)
               };
             } else {
               return product;
             }
-          }),
+          })
         };
       }
-      return {
-        ...state,
-        products: [
-          ...state.products,
-          { ...action.payload, amount: action.payload.amount },
-        ],
-      };
+
+      return { ...state, products: [...state.products, { ...action.payload, amount: action.payload.amount }] };
+
+    // ------------------------------------------------------------------
+
     case cartActionTypes.CLEAR_CART:
       return {
         ...state,
         products: [],
         productsTotalPrice: 0,
         productsTotalTax: 0,
-        productsTotalAmount: 0,
+        productsTotalAmount: 0
       };
 
     // case CartActionTypes.CANCEL_CART:

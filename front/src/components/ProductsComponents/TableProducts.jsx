@@ -8,7 +8,7 @@ const TableProducts = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('http://localhost/routes/products.php');
+        const res = await axios.get('/routes/products.php');
         const data = res.data;
 
         setProducts(data);
