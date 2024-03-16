@@ -1,30 +1,27 @@
-import axios from "axios";
+import axios from '../../lib/axios';
 // import PayPurchase from './PayPurchase';
-import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addProductToCart } from "../../redux/cart/actions";
-import "../HomeComponents/FormIndex.css";
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addProductToCart } from '../../redux/cart/actions';
+import '../HomeComponents/FormIndex.css';
 
 const FormIndex = () => {
   const [products, setProducts] = useState([]);
-  const [product, setProduct] = useState("");
-  const [amount, setAmount] = useState("");
-  const [tax, setTax] = useState("");
-  const [name, setName] = useState("");
-  const [categoryName, setCategoryName] = useState("");
-  const [price, setPrice] = useState("");
+  const [product, setProduct] = useState('');
+  const [amount, setAmount] = useState('');
+  const [tax, setTax] = useState('');
+  const [name, setName] = useState('');
+  const [categoryName, setCategoryName] = useState('');
+  const [price, setPrice] = useState('');
 
-const clearFormAftwerSubmit = () => {
-  setProduct("");
-  setAmount("");
-  setTax("");
-  setName("");
-  setCategoryName("");
-  setPrice("");
-}
-
-
-
+  const clearFormAftwerSubmit = () => {
+    setProduct('');
+    setAmount('');
+    setTax('');
+    setName('');
+    setCategoryName('');
+    setPrice('');
+  };
 
   async function changeTaxPrice() {
     const teste = products.find((prod) => prod.code == product);
@@ -33,7 +30,7 @@ const clearFormAftwerSubmit = () => {
       setTax(teste.tax);
       setPrice(teste.price);
       setName(teste.name);
-      setCategoryName(teste.categoryname)
+      setCategoryName(teste.categoryname);
     }
   }
   useEffect(() => {
@@ -43,7 +40,7 @@ const clearFormAftwerSubmit = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get("http://localhost/routes/products.php");
+        const res = await axios.get('/routes/products.php');
         const data = res.data;
         setProducts(data);
       } catch (error) {
@@ -70,11 +67,11 @@ const clearFormAftwerSubmit = () => {
     handleProductClick();
   };
   return (
-    <div className="main main-index" id="mainIndex">
-      <div className="half add-products" id="addProduct">
+    <div className='main main-index' id='mainIndex'>
+      <div className='half add-products' id='addProduct'>
         <form
-          className="amount-tax-price"
-          id="formIndex"
+          className='amount-tax-price'
+          id='formIndex'
           required
           // onSubmit={(e) => {
           //   e.preventDefault();
@@ -82,14 +79,13 @@ const clearFormAftwerSubmit = () => {
           // }}
         >
           <select
-            id="productName"
-            name="name"
-            data-index="new"
+            id='productName'
+            name='name'
+            data-index='new'
             required
             onChange={(e) => {
               setProduct(e.target.value);
-            }}
-          >
+            }}>
             <option hidden>Select a Product</option>
             {products?.map((prod) => (
               <option key={prod.code} value={prod.code}>
@@ -100,11 +96,11 @@ const clearFormAftwerSubmit = () => {
 
           <input
             required
-            placeholder="Amount"
-            type="number"
-            name="amount"
-            id="amount"
-            min="1"
+            placeholder='Amount'
+            type='number'
+            name='amount'
+            id='amount'
+            min='1'
             onChange={(e) => {
               setAmount(e.target.value);
             }}
@@ -112,10 +108,10 @@ const clearFormAftwerSubmit = () => {
 
           <input
             disabled
-            placeholder="Tax"
-            type="number"
-            name="tax"
-            id="tax"
+            placeholder='Tax'
+            type='number'
+            name='tax'
+            id='tax'
             value={tax}
             onChange={(e) => {
               setTax(e.target.value);
@@ -124,22 +120,21 @@ const clearFormAftwerSubmit = () => {
 
           <input
             disabled
-            placeholder="Price"
-            type="number"
-            name="price"
-            id="price"
+            placeholder='Price'
+            type='number'
+            name='price'
+            id='price'
             value={price}
             onChange={(e) => {
               setPrice(e.target.value);
             }}
           />
           <input
-            className="secundary-button"
-            id="buttonCreateProduct"
-            type="submit"
-            value="Add Product"
-            onClick={executa2func}
-          ></input>
+            className='secundary-button'
+            id='buttonCreateProduct'
+            type='submit'
+            value='Add Product'
+            onClick={executa2func}></input>
         </form>
         {/* <PayPurchase /> */}
       </div>

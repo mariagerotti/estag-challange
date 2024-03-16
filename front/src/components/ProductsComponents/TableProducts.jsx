@@ -1,6 +1,6 @@
-import TrProducts from "./TrProducts";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import TrProducts from './TrProducts';
+import axios from '../../lib/axios';
+import { useState, useEffect } from 'react';
 
 const TableProducts = () => {
   const [products, setProducts] = useState([]);
@@ -8,7 +8,7 @@ const TableProducts = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get("http://localhost/routes/products.php");
+        const res = await axios.get('http://localhost/routes/products.php');
         const data = res.data;
 
         setProducts(data);
@@ -19,9 +19,9 @@ const TableProducts = () => {
     getProducts();
   }, []);
   return (
-    <div className="main main-products">
-      <div className="table-products">
-        <table id="tableProducts">
+    <div className='main main-products'>
+      <div className='table-products'>
+        <table id='tableProducts'>
           <thead>
             <tr>
               <th>Code</th>
@@ -33,7 +33,7 @@ const TableProducts = () => {
             </tr>
           </thead>
 
-          <tbody id="tbodyProducts">
+          <tbody id='tbodyProducts'>
             {products?.map((product) => (
               <TrProducts
                 key={product.code}

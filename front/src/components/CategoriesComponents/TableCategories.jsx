@@ -1,14 +1,14 @@
 // import Categories from "../../pages/Categories";
-import TrCategories from "./TrCategories";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import TrCategories from './TrCategories';
+import axios from '../../lib/axios';
+import { useState, useEffect } from 'react';
 
 const TableCategories = () => {
   const [categories, setCategories] = useState([]);
 
   const getCategories = async () => {
     try {
-      const res = await axios.get("http://localhost/routes/category.php");
+      const res = await axios.get('/routes/category.php');
       const data = res.data;
 
       setCategories(data);
@@ -19,8 +19,8 @@ const TableCategories = () => {
 
   const deleteCategory = async (code) => {
     try {
-      await fetch(`http://localhost/routes/category.php?code=${code}`, {
-        method: "DELETE",
+      await fetch(`/routes/category.php?code=${code}`, {
+        method: 'DELETE'
       });
       await getCategories();
     } catch (error) {
@@ -33,9 +33,9 @@ const TableCategories = () => {
   }, [getCategories]);
 
   return (
-    <div className="main main-categories">
-      <div className="table-categories">
-        <table id="tableCategories">
+    <div className='main main-categories'>
+      <div className='table-categories'>
+        <table id='tableCategories'>
           <thead>
             <tr>
               <th>Code</th>
@@ -44,14 +44,16 @@ const TableCategories = () => {
               <th></th>
             </tr>
           </thead>
-          <tbody id="tbodyCategories">
+          <tbody id='tbodyCategories'>
             {categories?.map((category) => (
               <TrCategories
                 key={category.code}
                 code={category.code}
                 name={category.name}
                 tax={category.tax}
-                deleteFunction={() => {deleteCategory(category.code)}}
+                deleteFunction={() => {
+                  deleteCategory(category.code);
+                }}
               />
             ))}
           </tbody>
@@ -60,6 +62,5 @@ const TableCategories = () => {
     </div>
   );
 };
-
 
 export default TableCategories;
