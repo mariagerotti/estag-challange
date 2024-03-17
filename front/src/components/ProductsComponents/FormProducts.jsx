@@ -38,7 +38,7 @@ const FormProducts = () => {
     formProduct.append('category_code', category);
     console.log(data);
     try {
-      const res = await axios.post('/routes/products.php', formProduct, window.location.reload());
+      const res = await axios.post('/routes/products.php', formProduct);
       console.log(res);
     } catch (error) {
       console.error(error);
@@ -49,14 +49,11 @@ const FormProducts = () => {
     e.preventDefault();
     postarProd(e);
     e.target.reset();
-  }
+  };
 
   return (
     <div className='main main-products'>
-      <form
-        className='inputs-products'
-        id='inputsProducts'
-        onSubmit={handleProductClick}>
+      <form className='inputs-products' id='inputsProducts' onSubmit={handleProductClick}>
         <input
           placeholder='Product Name'
           type='text'

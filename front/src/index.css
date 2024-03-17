@@ -130,6 +130,7 @@
   justify-content: center;
   gap: 1em;
   align-items: center;
+  width: 100%;
 }
 
 .row {
@@ -145,6 +146,7 @@
   flex-direction: column;
   gap: 1em;
   align-items: center;
+  width: 100%;
 }
 
 .justify-center {

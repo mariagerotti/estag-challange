@@ -42,6 +42,7 @@ const FinishPurchase = () => {
         const product = products.find((product) => product.code == item.code);
         if (product.amount > item.amount) {
           alert(`Product ${product.name} has only ${product.amount} in stock`);
+          // clearTableAfterSubmit();
           return;
         }
       });

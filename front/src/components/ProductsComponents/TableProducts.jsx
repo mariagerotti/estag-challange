@@ -1,27 +1,11 @@
-import TrProducts from './TrProducts';
-import axios from '../../lib/axios';
-import { useState, useEffect } from 'react';
+import DeleteButton from '../DeleteButton/DeleteButton';
 
-const TableProducts = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await axios.get('/routes/products.php');
-        const data = res.data;
-
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getProducts();
-  }, []);
+const TableProducts = ({ products, deleteProduct }) => {
+  console.log(products);
   return (
     <div className='main main-products'>
       <div className='table-products'>
-        <table id='tableProducts'>
+        <table>
           <thead>
             <tr>
               <th>Code</th>
@@ -33,16 +17,18 @@ const TableProducts = () => {
             </tr>
           </thead>
 
-          <tbody id='tbodyProducts'>
+          <tbody>
             {products?.map((product) => (
-              <TrProducts
-                key={product.code}
-                code={product.code}
-                product={product.name}
-                price={product.price}
-                amount={product.amount}
-                category={product.category_code}
-              />
+              <tr>
+                <td>{product.code}</td>
+                <td>{product.tax}</td>
+                <td>{product.price}</td>
+                <td>{product.amount}</td>
+                <td>{product.categoryName}</td>
+                <td>
+                  <DeleteButton onclick={() => deleteProduct(product.code)} />
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>

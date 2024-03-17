@@ -1,11 +1,36 @@
+import { useState } from 'react';
+import axios from '../lib/axios';
+
 import FormProducts from '../components/ProductsComponents/FormProducts';
 import TableProducts from '../components/ProductsComponents/TableProducts';
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    axios.get('/routes/products.php').then((res) => {
+      console.log(res.data);
+      setProducts(res.data);
+    });
+  };
+
+  const deleteProduct = async (code) => {
+    try {
+      await axios.delete(`/routes/products.php?code=${code}`);
+      await getProducts();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useState(() => {
+    getProducts();
+  }, []);
+
   return (
     <div className='categories-component'>
       <FormProducts />
-      <TableProducts />
+      <TableProducts products={products} deleteProduct={deleteProduct} />
     </div>
   );
 };
