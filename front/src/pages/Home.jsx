@@ -2,7 +2,6 @@ import FormIndex from '../components/HomeComponents/FormIndex';
 import TableIndex from '../components/HomeComponents/TableIndex';
 import TotalTaxIndex from '../components/HomeComponents/TaxTotalIndex';
 import FinishPurchase from '../components/HomeComponents/FinishPurchase';
-
 import { useState } from 'react';
 
 const Home = () => {

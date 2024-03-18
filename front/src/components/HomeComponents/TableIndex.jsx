@@ -6,6 +6,7 @@ const TableIndex = () => {
   const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
 
   return (
+    <>
     <table>
       <thead>
         <tr>
@@ -24,6 +25,7 @@ const TableIndex = () => {
         ))}
       </tbody>
     </table>
+    </>
   );
 };
 

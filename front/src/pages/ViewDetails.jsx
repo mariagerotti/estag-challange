@@ -46,6 +46,7 @@ const ViewDetails = () => {
 
   return (
     <div className="main main-view">
+      
       <TableDetails orderItems={orderItems} />
 
       <div className="total-info">

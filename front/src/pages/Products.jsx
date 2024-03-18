@@ -3,6 +3,7 @@ import axios from '../lib/axios';
 
 import FormProducts from '../components/ProductsComponents/FormProducts';
 import TableProducts from '../components/ProductsComponents/TableProducts';
+import PagesTitle from '../components/PagesTitle';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -29,6 +30,7 @@ const Products = () => {
 
   return (
     <div className='categories-component'>
+      <PagesTitle>Products</PagesTitle>
       <FormProducts />
       <TableProducts products={products} deleteProduct={deleteProduct} />
     </div>

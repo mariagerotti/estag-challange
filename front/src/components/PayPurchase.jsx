@@ -1,9 +1,8 @@
-import '../../assets/stylePay.css';
+import '../assets/stylePay.css';
 
 const payPurchase = () => {
   return (
     <div>
-      <h1>Pay Purchase</h1>
       <div className="container">
         <div className="left-side">
           <div className="card">

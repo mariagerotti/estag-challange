@@ -1,9 +1,10 @@
 import TableHistory from '../components/HistoryComponents/TableHistory';
+import PagesTitle from '../components/PagesTitle';
 
 const History = () => {
   return (
     <div className='history-component'>
-      <h1>History</h1>
+      <PagesTitle>History</PagesTitle>
       <TableHistory />
     </div>
   );

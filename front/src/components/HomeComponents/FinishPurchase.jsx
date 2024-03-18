@@ -1,4 +1,5 @@
 import axios from "../../lib/axios";
+import PayPurchase from "../PayPurchase";
 import {
   selectProductsTotalPrice,
   selectProductsTotalTax,
@@ -88,6 +89,7 @@ const FinishPurchase = () => {
   };
 
   return (
+    <>
     <div className="main main-index" id="mainIndex">
       <div className="finish-add">
         <button className="primary-button" id="cancel" onClick={cancelPurchase}>
@@ -102,6 +104,8 @@ const FinishPurchase = () => {
         </button>
       </div>
     </div>
+      <PayPurchase />
+    </>
   );
 };
 export default FinishPurchase;
