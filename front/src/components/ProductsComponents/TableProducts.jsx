@@ -12,8 +12,8 @@ const TableProducts = ({ products, deleteProduct }) => {
             <tr>
               <th>Code</th>
               <th>Product</th>
-              <th>Amount</th>
               <th>Unit Price</th>
+              <th>Amount</th>
               <th>Category</th>
               <th></th>
             </tr>

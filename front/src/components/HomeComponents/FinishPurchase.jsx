@@ -83,6 +83,7 @@ const FinishPurchase = () => {
     } catch (error) {
       console.log(error);
     }
+    dispatch(cancelCart())
   };
 
   const dispatch = useDispatch();

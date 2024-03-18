@@ -71,19 +71,6 @@ const FormProducts = () => {
         />
 
         <input
-          placeholder="Amount"
-          type="number"
-          name="amount"
-          id="amountProducts"
-          min={1}
-          step={1}
-          required
-          onChange={(e) => {
-            setAmount(e.target.value);
-          }}
-        />
-
-        <input
           placeholder="$ Unit Price"
           type="number"
           name="price"
@@ -95,6 +82,19 @@ const FormProducts = () => {
             setPrice(e.target.value);
           }}
         />
+                <input
+          placeholder="Amount"
+          type="number"
+          name="amount"
+          id="amountProducts"
+          min={1}
+          
+          required
+          onChange={(e) => {
+            setAmount(e.target.value);
+          }}
+        />
+
 
         <select
           name="category_code"

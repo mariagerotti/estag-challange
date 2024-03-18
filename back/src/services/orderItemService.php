@@ -33,14 +33,4 @@ function itensStorage($product_code){
     $itemProduct = $itensProducts->fetch();
     return $itemProduct ;
 };
-
-// function checkStock($product_code, $amount){
-//     $itemProduct = itensStorage($product_code);
-//     $currentAmount = $itemProduct["AMOUNT"];
-//     if($currentAmount >= $amount){
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
 ?>
