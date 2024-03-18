@@ -58,8 +58,7 @@ const FinishPurchase = () => {
         if (item.amount <= product.amount) {
           product.amount -= item.amount;
           await axios.put(
-            `http://localhost/routes/products.php?code=${product.code}`,
-            product
+            `http://localhost/routes/products.php?code=${product.code}`
           );
         } else {
           alert(`Product ${product.name} has only ${product.amount} in stock`);

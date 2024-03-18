@@ -53,7 +53,6 @@
   th,
   td {
     border-bottom: 0.1vw solid gray;
-    /* text-align: left; */
     padding: 4px;
     border-right: 0.1vw solid gray;
   }
@@ -128,7 +127,6 @@
   flex-direction: row;
   justify-content: center;
   gap: 1em;
-  align-items: center;
   width: 100%;
 }
 

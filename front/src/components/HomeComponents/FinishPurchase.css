@@ -1,9 +1,9 @@
 .finish-add {
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: flex-start;
     gap: 1em;
-    margin-top: auto;
+    /* margin-top: auto; */
   }
   .total-tax {
     margin-top: auto;

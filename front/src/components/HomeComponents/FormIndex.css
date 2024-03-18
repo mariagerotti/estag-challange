@@ -39,4 +39,8 @@
   width: 100%;
 }
 
-/* Path: front/src/components/HomeComponents/FormIndex.js */
+.addProductContainer{
+  padding-right: 36px;
+  border-right: 0.1vw solid gray;
+  height: 80vh;
+}

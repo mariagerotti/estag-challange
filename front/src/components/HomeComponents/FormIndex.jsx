@@ -65,6 +65,8 @@ const FormIndex = () => {
     e.target.reset();
   };
   return (
+    <div className="addProductContainer">
+
     <form className="amount-tax-price" onSubmit={addFinalProduct}>
       <select name="name" required onChange={(e) => setProduct(e.target.value)}>
         <option>Select a Product</option>
@@ -113,6 +115,7 @@ const FormIndex = () => {
         Add product
       </button>
     </form>
+    </div>
   );
 };
 

@@ -3,11 +3,11 @@ export const selectProductsCount = (rootReducer) => {
 };
 
 export const selectProductsTotalPrice = (rootReducer) => {
-  return rootReducer.cartReducer.products.reduce((acc, item) => acc + item.price * item.amount, 0);
+  return rootReducer.cartReducer.products.reduce((acc, item) => acc + (item.price * item.amount) + (item.tax * item.amount), 0);
 };
 
 export const selectProductsTotalTax = (rootReducer) => {
-  return rootReducer.cartReducer.products.reduce((acc, item) => acc + item.tax * item.amount, 0);
+  return rootReducer.cartReducer.products.reduce((acc, item) => acc + (item.tax * item.amount), 0);
 };
 
 export const selectCancelPurchase = (rootReducer) => {

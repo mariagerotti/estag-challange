@@ -10,12 +10,12 @@ const TotalTaxIndex = () => {
     <div className='row'>
       <div>
         <label>Tax:</label>
-        <input disabled type='number' name='tax' id='final-tax' placeholder={tax} />
+        <input disabled type='number' name='tax' id='final-tax' placeholder={"R$" + tax} />
       </div>
 
       <div>
         <label>Total:</label>
-        <input disabled type='number' name='total' id='total' placeholder={total} />
+        <input disabled type='number' name='total' id='total' placeholder={"R$" + total} />
       </div>
     </div>
   );
