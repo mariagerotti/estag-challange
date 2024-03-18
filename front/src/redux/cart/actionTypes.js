@@ -1,6 +1,6 @@
 const cartActionTypes = {
     ADD_PRODUCT: "cart/addProduct",
-    REMOVE_PRODUCT: "cart/removeProduct",
+    DELETE_PRODUCT: "cart/deleteProduct",
     CLEAR_CART: "cart/clearCart",
 }
 

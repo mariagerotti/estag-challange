@@ -14,8 +14,6 @@ const FormIndex = () => {
   const [price, setPrice] = useState('');
 
   const clearFormAfterSubmit = () => {
-    // setProduct('');
-    // setAmount('');
     setTax('');
     setPrice('');
   };

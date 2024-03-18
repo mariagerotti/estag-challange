@@ -13,3 +13,9 @@ export const selectProductsTotalTax = (rootReducer) => {
 export const selectCancelPurchase = (rootReducer) => {
   return rootReducer.cartReducer.products.length === 0;
 };
+
+// export const selectProducts = (rootReducer) => {
+//   return rootReducer.cartReducer.products;
+// }
+
+// ex

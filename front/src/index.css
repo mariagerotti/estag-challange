@@ -103,26 +103,25 @@
     align-items: flex-end;
   }
 
-  table{
+  table {
     border-collapse: collapse;
     width: 100%;
     padding: 12px;
     justify-content: center;
   }
-  
-  table th, table td {
+
+  table th,
+  table td {
     border-bottom: 0.1vw solid gray;
     padding: 4px;
     border-right: 0.1vw solid gray;
   }
-  
-  table th:last-child, table td:last-child {
+
+  table th:last-child,
+  table td:last-child {
     border-right: none;
   }
-  
 }
-
-
 
 .home__page {
   display: flex;
@@ -140,16 +139,14 @@
   align-items: center;
 }
 
-
 .column {
   display: flex;
   flex-direction: column;
   gap: 1em;
   align-items: center;
-  width: 100%;
+  width: 50vw;
 }
 
 .justify-center {
   justify-content: center;
 }
-

@@ -1,10 +1,12 @@
-import DeleteButton from '../DeleteButton/DeleteButton';
+import DeleteButton from "../DeleteButton/DeleteButton";
 
 const TableProducts = ({ products, deleteProduct }) => {
+
+
   console.log(products);
   return (
-    <div className='main main-products'>
-      <div className='table-products'>
+    <div className="main main-products">
+      <div className="table-products">
         <table>
           <thead>
             <tr>

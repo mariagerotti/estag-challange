@@ -1,18 +1,19 @@
-import cartActionTypes from './actionTypes';
+import cartActionTypes from "./actionTypes";
 
 const initialState = {
   products: [],
   productsTotalPrice: 0,
   productsTotalTax: 0,
-  productsTotalAmount: 0
+  productsTotalAmount: 0,
 };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
+    //-------------------------------------------------------------------------
     case cartActionTypes.ADD_PRODUCT:
-      //-------------------------------------------------------------------------
-
-      const productIsAlreadyInCart = state.products.some((product) => product.code === action.payload.code);
+      const productIsAlreadyInCart = state.products.some(
+        (product) => product.code === action.payload.code
+      );
       if (productIsAlreadyInCart) {
         return {
           ...state,
@@ -20,16 +21,23 @@ const cartReducer = (state = initialState, action) => {
             if (product.code == action.payload.code) {
               return {
                 ...product,
-                amount: parseInt(product.amount) + parseInt(action.payload.amount)
+                amount:
+                  parseInt(product.amount) + parseInt(action.payload.amount),
               };
             } else {
               return product;
             }
-          })
+          }),
         };
       }
 
-      return { ...state, products: [...state.products, { ...action.payload, amount: action.payload.amount }] };
+      return {
+        ...state,
+        products: [
+          ...state.products,
+          { ...action.payload, amount: action.payload.amount },
+        ],
+      };
 
     // ------------------------------------------------------------------
 
@@ -39,14 +47,41 @@ const cartReducer = (state = initialState, action) => {
         products: [],
         productsTotalPrice: 0,
         productsTotalTax: 0,
-        productsTotalAmount: 0
+        productsTotalAmount: 0,
       };
 
-    // case CartActionTypes.CANCEL_CART:
-    //     return{
-    //         ...initialState,
-    //     }
-    // }
+    //------------------------------------------------------------------
+
+    case cartActionTypes.DELETE_PRODUCT:
+      if (state.products.length == 0) {
+        return {
+          ...state,
+          products: [],
+        };
+      }
+      return {
+        ...state,
+        products: state.products.filter(
+          (product) => product.code !== action.payload
+        ),
+      };
+
+    // case cartActionTypes.DELETE_PRODUCT:
+    //   // if(state.products.length == 0){
+    //   //      return{
+    //   //         ...initialState,
+    //   //         cartProduct: [state.products = []]
+    //   //     }
+    //   // }
+    //   return {
+    //     ...state,
+    //     products: [
+    //       ...state.products.filter(
+    //         (cartProduct, index) => index != action.payload
+    //       ),
+    //     ],
+    //   };
+
     default:
       return state;
   }
