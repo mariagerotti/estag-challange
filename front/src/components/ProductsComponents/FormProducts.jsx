@@ -21,8 +21,10 @@ const FormProducts = () => {
       }
     };
     getCategories();
+    
   }, []);
 
+  
   const postarProd = async (e) => {
     e.preventDefault();
     let formProduct = new FormData();
@@ -44,12 +46,13 @@ const FormProducts = () => {
       console.error(error);
     }
   };
-
+  
   const handleProductClick = (e) => {
     e.preventDefault();
     postarProd(e);
     e.target.reset();
   };
+  
 
   return (
     <div className='main main-products'>

@@ -19,12 +19,12 @@ const TableProducts = ({ products, deleteProduct }) => {
 
           <tbody>
             {products?.map((product) => (
-              <tr>
+              <tr key={product.code}>
                 <td>{product.code}</td>
-                <td>{product.tax}</td>
+                <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.amount}</td>
-                <td>{product.categoryName}</td>
+                <td>{product.categoryname}</td>
                 <td>
                   <DeleteButton onclick={() => deleteProduct(product.code)} />
                 </td>

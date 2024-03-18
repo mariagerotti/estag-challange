@@ -7,7 +7,7 @@ const TrProducts = ({ product }) => {
       <td>{product.name}</td>
       <td>{product.price}</td>
       <td>{product.amount}</td>
-      <td>{product.categoryName}</td>
+      <td>{product.categoryname}</td>
       <td>
         <DeleteButton onclick={() => deleteProduct(code)} />
       </td>
