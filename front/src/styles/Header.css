@@ -1,14 +1,17 @@
 .container__header {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #16a34a;
-    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-    height: 10vh;
-    /* border-radius: 20px;  se quiser header voador*/ 
-  }
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #16a34a;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  height: 10vh;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+    /* se quiser header voador  */
+  
   
   .header__nav {
     display: flex;
@@ -19,7 +22,6 @@
   }
   
   a
-  /* ,button  */
   {
     background-color: #16a34a;
     border: none;

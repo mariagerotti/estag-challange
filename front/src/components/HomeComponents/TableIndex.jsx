@@ -15,6 +15,7 @@ const TableIndex = () => {
           <th>Price</th>
           <th>Category</th>
           <th>Total</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>

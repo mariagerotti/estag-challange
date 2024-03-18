@@ -1,7 +1,6 @@
 import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 // import { loginUser, logoutUser } from "../redux/user/actions";
-// import { useSelector } from "react-redux";
 // import { UseSelector, useDispatch } from 'react-redux';
 
 const Header = () => {
@@ -15,12 +14,6 @@ const Header = () => {
   // const handleLogoutCLick = () => {
   //   // dispatch();
   // }
-
-  // const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
-  // const total = products.reduce((acc, prod) => acc + prod.amount, 0);
-  // const productsCount = useMemo(() => {
-  //   return products.reduce((acc, prod) => acc + prod.amount, 0);
-  // }, [products]);
 
   return (
     <div className='container__header'>

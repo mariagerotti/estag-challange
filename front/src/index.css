@@ -24,13 +24,17 @@
   }
 
   input,
-  select,
-  option {
-    font-weight: bolder;
+  select {
     padding: 12px;
     border: 0.1vw solid rgba(128, 128, 128, 0.582);
     background-color: rgba(128, 128, 128, 0.075);
     border-radius: 6px;
+    color: #fff;
+  }
+
+  option {
+    background-color: #242424;
+    color: #fff;
   }
 
   table {
@@ -53,7 +57,7 @@
   th,
   td {
     border-bottom: 0.1vw solid gray;
-    padding: 4px;
+    padding: 1em !important;
     border-right: 0.1vw solid gray;
   }
 
@@ -125,9 +129,13 @@
 .home__page {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 1em;
   width: 100%;
+}
+
+.home__page form {
+  flex-direction: column;
+
 }
 
 .row {
@@ -142,7 +150,7 @@
   flex-direction: column;
   gap: 1em;
   align-items: center;
-  width: 50vw;
+  width: 100%;
 }
 
 .justify-center {
