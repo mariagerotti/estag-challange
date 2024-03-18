@@ -20,7 +20,7 @@ function runMethods(){
             $price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_FLOAT);
             $amount = filter_input(INPUT_POST, "amount", FILTER_SANITIZE_NUMBER_INT);
             $category_code = filter_input(INPUT_POST, "category_code", FILTER_SANITIZE_NUMBER_INT);
-            echo postProducts($name, $amount, $price, $category_code);
+            echo postProducts($name, $price, $amount, $category_code);
             break;
 
         case 'DELETE':

@@ -28,13 +28,13 @@ const FormProducts = () => {
     let formProduct = new FormData();
     const data = {
       name: name,
-      amount: amount,
       price: price,
+      amount: amount,
       category_code: category,
     };
     formProduct.append("name", name);
-    formProduct.append("amount", amount);
     formProduct.append("price", price);
+    formProduct.append("amount", amount);
     formProduct.append("category_code", category);
     console.log(data);
     try {
