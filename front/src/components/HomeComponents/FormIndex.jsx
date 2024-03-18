@@ -16,6 +16,7 @@ const FormIndex = () => {
   const clearFormAfterSubmit = () => {
     setTax("");
     setPrice("");
+    setAmount("");
   };
 
   async function changeTaxPrice() {

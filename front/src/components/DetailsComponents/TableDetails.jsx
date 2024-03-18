@@ -26,17 +26,17 @@ const TableDetails = ({ orderItems }) => {
           <th>Code</th>
           <th>Product Code</th>
           <th>Amount</th>
-          <th>Total Price</th>
+          <th>Price</th>
           <th>Tax</th>
         </tr>
       </thead>
 
-      <tbody id='tbodyHistory'>
+      <tbody>
         {orderItems?.map((order) => (
           <TrDetails
             key={order.code}
             order={order}
-            product={products.find((product) => product.code === order.product_code)}
+            product={products.find((product) => product.code == order.product_code)}
           />
         ))}
       </tbody>

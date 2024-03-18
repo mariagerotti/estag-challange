@@ -38,24 +38,6 @@ const FinishPurchase = () => {
         alert("Cart is empty");
         return;
       }
-
-      // const hasEnoughStock = cart.every((item) => {
-      //   const product = products.find((product) => product.code == item.code);
-      //   return product.amount >= item.amount;
-      // });
-
-      // if (!hasEnoughStock) {
-      //   alert(`Not enough stock for ${item.name}`);
-      //   return;
-      // }
-
-      cart.forEach((item) => {
-        const product = products.find((product) => product.code == item.code);
-        if (product.amount >= item.amount) {
-          alert(`Product ${product.name} has only ${product.amount} in stock`);
-          return;
-        }
-      });
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +51,22 @@ const FinishPurchase = () => {
     try {
       const res = await axios.post("/routes/order.php", order);
       console.log(res);
-      alert("Purchase completed");
+
+      for (const item of cart) {
+        const product = products.find((product) => product.code == item.code);
+
+        if (item.amount <= product.amount) {
+          product.amount -= item.amount;
+          await axios.put(
+            `http://localhost/routes/products.php?code=${product.code}`,
+            product
+          );
+        } else {
+          alert(`Product ${product.name} has only ${product.amount} in stock`);
+          return;
+        }
+      }
+
       cart.forEach(async (item) => {
         let form = new FormData();
         form.append("order_code", parseInt(res.data.code));
@@ -83,7 +80,7 @@ const FinishPurchase = () => {
     } catch (error) {
       console.log(error);
     }
-    dispatch(cancelCart())
+    dispatch(cancelCart());
   };
 
   const dispatch = useDispatch();

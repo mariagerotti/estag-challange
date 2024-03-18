@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import TableDetails from '../components/DetailsComponents/TableDetails';
-import axios from '../lib/axios';
+import { useEffect, useState } from "react";
+import TableDetails from "../components/DetailsComponents/TableDetails";
+import axios from "../lib/axios";
 
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const ViewDetails = () => {
   const { code } = useParams();
@@ -12,7 +12,7 @@ const ViewDetails = () => {
 
   const getAllOrders = async () => {
     try {
-      const { data } = await axios.get('/routes/order.php');
+      const { data } = await axios.get("/routes/order.php");
       return data;
     } catch (error) {
       console.log(error);
@@ -21,7 +21,7 @@ const ViewDetails = () => {
 
   const getOrderItems = async () => {
     try {
-      const { data } = await axios.get('/routes/orderItem.php');
+      const { data } = await axios.get("/routes/orderItem.php");
       const items = data.filter((item) => item.order_code == code);
 
       setOrderItems(items);
@@ -45,11 +45,11 @@ const ViewDetails = () => {
   console.log(order);
 
   return (
-    <div className='main main-view'>
+    <div className="main main-view">
       <TableDetails orderItems={orderItems} />
 
-      <div className='total-info'>
-        <h3 className='tax-paid'>Taxes you paid: {order.tax}</h3>
+      <div className="total-info">
+        <h3 className="tax-paid">Taxes you paid: {order.tax}</h3>
 
         <h1>Total: {order.total}</h1>
       </div>
