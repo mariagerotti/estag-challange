@@ -66,22 +66,6 @@ const cartReducer = (state = initialState, action) => {
         ),
       };
 
-    // case cartActionTypes.DELETE_PRODUCT:
-    //   // if(state.products.length == 0){
-    //   //      return{
-    //   //         ...initialState,
-    //   //         cartProduct: [state.products = []]
-    //   //     }
-    //   // }
-    //   return {
-    //     ...state,
-    //     products: [
-    //       ...state.products.filter(
-    //         (cartProduct, index) => index != action.payload
-    //       ),
-    //     ],
-    //   };
-
     default:
       return state;
   }
@@ -101,6 +85,7 @@ const cartReducer = (state = initialState, action) => {
 //         const productsTotalTax = products.reduce((acc, prod) => acc + prod.tax * prod.amount, 0);
 //         const productsTotalAmount = products.reduce((acc, prod) => acc + prod.amount, 0);
 //         return { ...state, products, productsTotalPrice, productsTotalTax, productsTotalAmount };
+//----------------------------------------------------------------------------
 //     case "REMOVE_PRODUCT":
 //         const productsFiltered = state.products.filter((prod) => prod.code !== action.payload);
 //         const productsTotalPriceFiltered = productsFiltered.reduce((acc, prod) => acc + prod.price * prod.amount, 0);

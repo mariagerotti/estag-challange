@@ -1,21 +1,21 @@
-import axios from '../../lib/axios';
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { addProductToCart } from '../../redux/cart/actions';
-import '../HomeComponents/FormIndex.css';
+import axios from "../../lib/axios";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addProductToCart } from "../../redux/cart/actions";
+import "../HomeComponents/FormIndex.css";
 
 const FormIndex = () => {
   const [products, setProducts] = useState([]);
-  const [product, setProduct] = useState('');
-  const [amount, setAmount] = useState('');
-  const [tax, setTax] = useState('');
-  const [name, setName] = useState('');
-  const [categoryName, setCategoryName] = useState('');
-  const [price, setPrice] = useState('');
+  const [product, setProduct] = useState("");
+  const [amount, setAmount] = useState("");
+  const [tax, setTax] = useState("");
+  const [name, setName] = useState("");
+  const [categoryName, setCategoryName] = useState("");
+  const [price, setPrice] = useState("");
 
   const clearFormAfterSubmit = () => {
-    setTax('');
-    setPrice('');
+    setTax("");
+    setPrice("");
   };
 
   async function changeTaxPrice() {
@@ -34,7 +34,7 @@ const FormIndex = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('/routes/products.php');
+        const res = await axios.get("/routes/products.php");
         const data = res.data;
         setProducts(data);
       } catch (error) {
@@ -53,7 +53,7 @@ const FormIndex = () => {
         amount: amount,
         tax: tax,
         price: price,
-        categoryName: categoryName
+        categoryName: categoryName,
       })
     );
   };
@@ -64,8 +64,8 @@ const FormIndex = () => {
     e.target.reset();
   };
   return (
-    <form className='amount-tax-price' onSubmit={addFinalProduct}>
-      <select name='name' required onChange={(e) => setProduct(e.target.value)}>
+    <form className="amount-tax-price" onSubmit={addFinalProduct}>
+      <select name="name" required onChange={(e) => setProduct(e.target.value)}>
         <option>Select a Product</option>
         {products?.map((prod) => (
           <option key={prod.code} value={prod.code}>
@@ -76,10 +76,12 @@ const FormIndex = () => {
 
       <input
         required
-        placeholder='Amount'
-        type='number'
-        name='amount'
-        min='1'
+        placeholder="Amount"
+        type="number"
+        name="amount"
+        min={1}
+        value={amount}
+        max={products.find((prod) => prod.code == product)?.amount}
         onChange={(e) => {
           setAmount(e.target.value);
         }}
@@ -87,9 +89,9 @@ const FormIndex = () => {
 
       <input
         disabled
-        placeholder='Tax'
-        type='number'
-        name='tax'
+        placeholder="Tax"
+        type="number"
+        name="tax"
         value={tax}
         onChange={(e) => {
           setTax(e.target.value);
@@ -98,15 +100,15 @@ const FormIndex = () => {
 
       <input
         disabled
-        placeholder='Price'
-        type='number'
-        name='price'
+        placeholder="Price"
+        type="number"
+        name="price"
         value={price}
         onChange={(e) => {
           setPrice(e.target.value);
         }}
       />
-      <button className='secundary-button' type='submit'>
+      <button className="secundary-button" type="submit">
         Add product
       </button>
     </form>
