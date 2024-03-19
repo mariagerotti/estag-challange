@@ -22,6 +22,8 @@ const TableCategories = () => {
   }, [getCategories]);
 
   return (
+    
+
     <div className='main main-categories'>
       <div className='table-categories'>
         <table id='tableCategories'>
@@ -46,6 +48,7 @@ const TableCategories = () => {
         </table>
       </div>
     </div>
+  
   );
 };
 
