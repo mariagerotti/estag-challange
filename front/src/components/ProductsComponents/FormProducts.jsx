@@ -1,6 +1,6 @@
 import axios from "../../lib/axios";
 import { useState, useEffect } from "react";
-import "../ProductsComponents/FormProducts.css";
+import "../../assets/FormProducts.css";
 
 const FormProducts = () => {
   const [categories, setCategories] = useState([]);
@@ -37,6 +37,7 @@ const FormProducts = () => {
     formProduct.append("amount", amount);
     formProduct.append("category_code", category);
     console.log(data);
+    window.location.reload();
     try {
       const res = await axios.post("/routes/products.php", formProduct);
       console.log(res);

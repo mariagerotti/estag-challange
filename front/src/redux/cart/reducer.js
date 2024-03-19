@@ -12,8 +12,9 @@ const cartReducer = (state = initialState, action) => {
     //-------------------------------------------------------------------------
     case cartActionTypes.ADD_PRODUCT:
       const productIsAlreadyInCart = state.products.some(
-        (product) => product.code === action.payload.code
+        (product) => product.code == action.payload.code
       );
+      console.log(action.payload.code);
       if (productIsAlreadyInCart) {
         return {
           ...state,
@@ -70,5 +71,6 @@ const cartReducer = (state = initialState, action) => {
       return state;
   }
 };
+
 
 export default cartReducer;

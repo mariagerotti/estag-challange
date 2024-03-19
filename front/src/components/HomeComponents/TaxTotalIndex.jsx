@@ -1,4 +1,4 @@
-import '../HomeComponents/TaxTotalIndex.css';
+import '../../assets/TaxTotalIndex.css';
 import { useSelector } from 'react-redux';
 import { selectProductsTotalPrice, selectProductsTotalTax } from '../../redux/cart/cartSelectors';
 

@@ -1,4 +1,4 @@
-import '../styles/PagesTitle.css';
+import '../assets/PagesTitle.css';
 
 const PagesTitle = (props) => {
   return (

@@ -4,7 +4,7 @@ import {
   selectProductsTotalPrice,
   selectProductsTotalTax,
 } from "../../redux/cart/cartSelectors";
-import "../HomeComponents/FinishPurchase.css";
+import "../../assets/FinishPurchase.css";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from '../../lib/axios';
-import './FormCategories.css';
+import '../../assets/FormCategories.css';
 
 const FormCategories = () => {
   const [name, setName] = useState('');

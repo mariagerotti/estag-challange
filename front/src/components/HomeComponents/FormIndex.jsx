@@ -2,7 +2,7 @@ import axios from "../../lib/axios";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../redux/cart/actions";
-import "../HomeComponents/FormIndex.css";
+import "../../assets/FormIndex.css";
 
 const FormIndex = () => {
   const [products, setProducts] = useState([]);
